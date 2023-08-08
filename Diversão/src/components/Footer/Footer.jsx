@@ -8,7 +8,7 @@ const Footer = () => {
       <footer className="footerContainer">
         <section className="containerRow">
           <div className="firstMenu">
-            <h4 className="footerTittle">Garcia.Imoveis</h4>
+            <h4 className="footerTittle">Garcia.Moveis</h4>
           </div>
           <div className="secondMenu">
             <h5 className="footerTittle">Contato</h5>
