@@ -1,0 +1,40 @@
+.footerContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  font-family: "Times New Roman";
+}
+
+.containerRow {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-image: linear-gradient(to top, #cd853f 10%, #f4a460);
+  height: 100%;
+  padding: 10px;
+}
+
+.footerTittle {
+  background: linear-gradient(to bottom right, #800000, #000000 90%);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  margin-top: 1rem;
+  font-family: serif !important;
+  font-weight: 500px;
+  font-size: 3rem;
+  padding: 0.8rem;
+}
+
+.firstMenu,
+.secondMenu,
+.thirdMenu {
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  justify-content: space-between;
+  color: #461e00;
+}
+
+.footerSpan {
+  background-image: linear-gradient(to bottom right, #cd853f 80%, #f4a460);
+}
