@@ -60,7 +60,7 @@ const PaginaDeProdutos = () => {
             return (
               <CardProduto
                 item={item}
-                key={item.id || "0"} // Define a chave como o ID do produto, ou "0" se não houver ID
+                key={item.id} // Define a chave como o ID do produto
               />
             );
           })
