@@ -12,7 +12,7 @@ const Header = () => {
           <h1 className="headerH1">Garcia.Imoveis</h1>
           <ul className="headerList">
             <li>
-              <Link to={"/"} className="link">
+              <Link to={"/produtos"} className="link">
                 Produtos
               </Link>
             </li>

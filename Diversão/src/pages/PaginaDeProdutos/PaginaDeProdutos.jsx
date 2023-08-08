@@ -23,7 +23,7 @@ const PaginaDeProdutos = () => {
 
   // Função para buscar e configurar a lista de produtos
   const fetchProdutos = async () => {
-    const response = await fetch("http://localhost:4000/produtos");
+    const response = await fetch("http://localhost:3000/produtos");
     const produtos = await response.json();
 
     // Configurar a lista completa de produtos e produtos filtrados
