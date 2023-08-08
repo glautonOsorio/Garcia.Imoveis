@@ -1,5 +1,5 @@
 import React from "react";
-import { StyledCardProduto } from "./CardProduto.styled"; 
+import { StyledCardProduto, AddToCartButton } from "./CardProduto.styled"; 
 import { Link } from "react-router-dom";
 
 const CardProduto = ({ item }) => {
@@ -40,14 +40,12 @@ const CardProduto = ({ item }) => {
       <div className="image-container">
         <img src={item.imagem} alt={item.nome} loading="lazy" />
       </div>
-      {/* Link para a página de detalhes */}
-      <p className="title">
-        <Link to={`/shop/${item.id}`}>{item.nome}</Link>
-      </p>
       {/* Exibição do preço */}
       <p className="price">{item.preço}</p>
+      {/* Exibição do nome */}
+      <p className="title">{item.nome}</p>
       {/* Botão para adicionar ao carrinho */}
-      <button onClick={adicionarAoCarrinho}>Adicionar ao Carrinho</button>
+      <AddToCartButton className="bt" onClick={adicionarAoCarrinho}>Adicionar ao Carrinho</AddToCartButton>
     </StyledCardProduto>
   );
 };

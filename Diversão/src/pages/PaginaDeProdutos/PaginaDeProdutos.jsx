@@ -5,6 +5,7 @@ import { StyledContent, StyledProduto } from "./PaginaDeProduto.styled";
 import BuscaProduto from "../../components/BuscaProduto/BuscaProduto.component";
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
+import { ListaDeProdutos } from "../../services/ProdutosService/Produtos"; 
 
 const PaginaDeProdutos = () => {
   // Estado para armazenar a lista completa de produtos
@@ -23,28 +24,26 @@ const PaginaDeProdutos = () => {
 
   // Função para buscar e configurar a lista de produtos
   const fetchProdutos = async () => {
-    const response = await fetch("http://localhost:3000/produtos");
-    const produtos = await response.json();
-
-    // Configurar a lista completa de produtos e produtos filtrados
-    setItems(produtos);
-    setFilteredItems(produtos); // Inicialmente, todos os produtos são exibidos
-    return produtos;
+    try {
+      const produtos = await ListaDeProdutos.Get(); //usando o serviço Produtos
+      setItems(produtos);
+      setFilteredItems(produtos);
+    } catch (error) {
+      console.error("Erro ao buscar produtos:", error);
+    }
   };
 
-  // Função para lidar com a busca de produtos
   const handleSearch = (event) => {
     const searchTerm = event.target.value;
     setSearchTerm(searchTerm);
 
-    // Filtrar os produtos com base no termo de pesquisa
     const filtered = items.filter((item) =>
       item.nome.toLowerCase().includes(searchTerm.toLowerCase())
     );
 
-    // Configurar a lista de produtos filtrados
     setFilteredItems(filtered);
   };
+  
 
   return (
     <>

@@ -8,7 +8,7 @@ export const StyledCardProduto = styled.div`
   padding: 5px;
   background-color: #ffffff;
   border: 1px solid #e5e5e5;
-  border-radius: 5px;
+  border-radius: 9px;
   margin: 0 2px 15px 2px;
 
   .image-container {
@@ -25,7 +25,6 @@ export const StyledCardProduto = styled.div`
     max-height: 100%;
     max-width: 100%;
     object-fit: cover;
-    cursor: pointer;
   }
 
   .title {
@@ -33,35 +32,21 @@ export const StyledCardProduto = styled.div`
     justify-content: center;
     align-items: center;
     text-align: center;
-    cursor: pointer;
     word-break: break-word;
     margin-bottom: 5px;
+    font-size: 1rem;
     flex: 0 1 auto;
   }
 
-  .title > a {
-    text-decoration: none;
-    color: black;
-  }
-
-  .title:hover {
-    text-decoration: underline;
-  }
-
   .price {
+    display: flex;
+    padding: 3px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 1.2rem;
     font-weight: bold;
     cursor: default;
-  }
-
-  .rating {
-    display: flex;
-    align-items: center;
-    cursor: default;
-  }
-
-  .rating > svg {
-    margin-left: 3px;
-    color: orange;
   }
 
   @media (max-width: 1000px) {
@@ -78,5 +63,21 @@ export const StyledCardProduto = styled.div`
   @media (max-width: 620px) {
     width: 170px;
     height: 300px;
+  }
+`;
+
+export const AddToCartButton = styled.button`
+  padding: 10px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  border: none;
+  border-radius: 9px;
+  background-color: #3c4855;
+  color: white;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: #515961;
   }
 `;
