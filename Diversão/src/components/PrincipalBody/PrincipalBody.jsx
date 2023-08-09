@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { ListaDeProdutos } from "../../services/ProdutosService/Produtos";
 import ImagemPrincipal from "../../assets/ExemploPaiFilho.jpg";
-import "./PrincipalBody.css";
+import * as Styled from "./PrincipalBody.style";
 
 const PrincipalBody = () => {
   const [produtos, setProdutos] = useState();
@@ -15,37 +15,43 @@ const PrincipalBody = () => {
     pegaProduto();
   }, []);
   return (
-    <div className="main-container">
-      <h1 className="main-text-title">Feliz Dias dos Pais</h1>
-      <div className="main-content">
+    <Styled.MainContainer>
+      <Styled.MainTitle>Feliz Dias dos Pais</Styled.MainTitle>
+      <Styled.MainCard>
         <div>
-          <img className="main-image" src={ImagemPrincipal} alt="Pai e Filho" />
+          <Styled.CardImage src={ImagemPrincipal} alt="Pai e Filho" />
         </div>
-        <div className="main-card">
-          <h2 className="main-card-text-row">
+        <Styled.MainCardContent>
+          <Styled.MainCardTitle>
             Estamos com um
-            <p className="main-card-text-special">Super Desconto</p>
-          </h2>
-          <span className="main-card-text-row">
-            Para você <p className="main-card-text-special">Pai</p>
-          </span>
-          <h3 className="main-card-text-special">20% de Desconto</h3>
-          <span className="main-card-text-row">
-            em uma compra de <p className="main-card-text-special">3</p> ou mais
+            <Styled.MainCardSpecialText>
+              Super Desconto
+            </Styled.MainCardSpecialText>
+          </Styled.MainCardTitle>
+          <Styled.MainCardTextRow>
+            Para você
+            <Styled.MainCardSpecialText>Pai</Styled.MainCardSpecialText>
+          </Styled.MainCardTextRow>
+          <Styled.MainCardSpecialText>
+            20% de Desconto
+          </Styled.MainCardSpecialText>
+          <Styled.MainCardTextRow>
+            em uma compra de
+            <Styled.MainCardSpecialText>3</Styled.MainCardSpecialText> ou mais
             moveis
-          </span>
+          </Styled.MainCardTextRow>
           <button>Venha escolher o seu</button>
-        </div>
-      </div>
+        </Styled.MainCardContent>
+      </Styled.MainCard>
 
-      <div>
-        <h3 className="main-text-title">Veja nossos produtos</h3>
-        <div className="main-product-row">
+      <Styled.MainFooter>
+        <Styled.MainFooterTitle>Veja nossos produtos</Styled.MainFooterTitle>
+        <Styled.MainProductRow>
           {produtos &&
             produtos.map((produto) => {
               return (
                 <div key={produto.id}>
-                  <img
+                  <Styled.ProductImages
                     className="main-product-image"
                     src={produto.imagem}
                     alt="imagem de produto"
@@ -53,9 +59,9 @@ const PrincipalBody = () => {
                 </div>
               );
             })}
-        </div>
-      </div>
-    </div>
+        </Styled.MainProductRow>
+      </Styled.MainFooter>
+    </Styled.MainContainer>
   );
 };
 
