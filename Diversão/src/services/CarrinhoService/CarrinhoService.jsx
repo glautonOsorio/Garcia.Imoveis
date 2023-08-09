@@ -1,13 +1,13 @@
-const API_URL = `http://localhost:3000/carrinho`;
+const API_URL_CARRINHO = `http://localhost:3000/carrinho`;
 
 const Get = async () => {
-  const response = await fetch(API_URL);
+  const response = await fetch(API_URL_CARRINHO);
   const data = await response.json();
   return data;
 };
 
 const Create = async (newData) => {
-  await fetch(API_URL, {
+  await fetch(API_URL_CARRINHO, {
     method: "POST",
     body: JSON.stringify({
       produto_id: newData.produto_id,
@@ -28,7 +28,7 @@ const Create = async (newData) => {
 };
 
 const Delete = async (id) => {
-  await fetch(`${API_URL}/${id}`, {
+  await fetch(`${API_URL_CARRINHO}/${id}`, {
     method: "Delete",
     headers: {
       "Content-type": "application/json",

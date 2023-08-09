@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 import "./App.css";
 import PaginaPrincipal from "./pages/PaginaPrincipal/PaginaPrincipal";
+import { PaginaDeCompra } from "./pages/PaginaDeCompra/PaginaDeCompra";
 
 function App() {
   return (
@@ -10,7 +11,7 @@ function App() {
         <Routes>
           <Route path="/" element={<PaginaPrincipal />} />
           <Route path="/produtos" />
-          <Route path="/carrinho" />
+          <Route path="/carrinho" element={<PaginaDeCompra/>}/>
           <Route path="/checkout" />
           <Route path="/*" />
         </Routes>
