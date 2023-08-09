@@ -1,6 +1,7 @@
 import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
 import * as Styled from './PaginaDeCompra.style';
+import { QuantidadeComponent } from '../../components/Quantidade/Quantidade.component';
 
 export const PaginaDeCompra = () => {
 
@@ -31,22 +32,27 @@ export const PaginaDeCompra = () => {
   return(
     <>
       <Header/>
-      <Styled.MainWrapper>
+      <Styled.CarrinhoWrapper>
         <Styled.ProductsWrapper>
           {products.map(product => {
             return(
               <Styled.ProductInfoWrapper key={product.id}>
-                <img src={product.imagem} alt="Imagem do produto" />
-                <h2>{product.nome}</h2>
-                <p>{product.preço}</p>
+                <Styled.ProductImageWrapper>
+                  <img src={product.imagem} alt="" />
+                </Styled.ProductImageWrapper>
+                <Styled.ProductFeaturesWrapper>
+                  <h2>{product.nome}</h2>
+                  <p>{product.preço}</p>
+                  <QuantidadeComponent/>
+                </Styled.ProductFeaturesWrapper>
               </Styled.ProductInfoWrapper>
             );
           })}
         </Styled.ProductsWrapper>
         <Styled.SummaryWrapper>
-          
+          <p>resumo da compra</p>
         </Styled.SummaryWrapper>
-      </Styled.MainWrapper>
+      </Styled.CarrinhoWrapper>
       <Footer/>
     </>
   );
