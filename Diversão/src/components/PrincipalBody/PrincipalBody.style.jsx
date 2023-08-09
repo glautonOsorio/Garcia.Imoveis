@@ -50,7 +50,10 @@ export const MainCardTextRow = styled.span`
   justify-items: center;
   align-items: center;
 `;
-export const MainFooter = styled.div``;
+export const MainFooter = styled.div`
+  background-color: #ffffff;
+  box-shadow: 0.2rem 0.2rem 0.2rem black;
+`;
 export const MainFooterTitle = styled.h3`
   font-size: 4rem;
   color: #dc143c;
