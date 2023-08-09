@@ -24,7 +24,7 @@ const Footer = () => {
           <div className="thirdMenu">
             <h6 className="footerTittle">Informações</h6>
             <li>
-              <Link to={"/products"} className="link">
+              <Link to={"/produtos"} className="link">
                 Produtos
               </Link>
             </li>
