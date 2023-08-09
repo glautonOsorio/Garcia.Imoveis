@@ -7,16 +7,17 @@ export const MainContainer = styled.div`
   align-items: center;
   width: 100%;
   gap: 5rem;
-  margin: 1rem;
 `;
 export const MainTitle = styled.h1`
   font-size: 4rem;
   color: #dc143c;
+  margin: 1rem;
 `;
 export const MainCard = styled.div`
   display: flex;
   flex-direction: row;
   background-color: #6495ed;
+  margin: 1rem;
 `;
 export const CardImage = styled.img`
   width: 25rem;
@@ -52,7 +53,8 @@ export const MainCardTextRow = styled.span`
 `;
 export const MainFooter = styled.div`
   background-color: #ffffff;
-  box-shadow: 0.2rem 0.2rem 0.2rem black;
+  box-shadow: 0.2rem 0.2rem 0.2rem #485769;
+  margin-bottom: 4rem;
 `;
 export const MainFooterTitle = styled.h3`
   font-size: 4rem;
@@ -61,8 +63,8 @@ export const MainFooterTitle = styled.h3`
 export const MainProductRow = styled.div`
   display: flex;
   flex-direction: row;
-  width: 70rem;
-  height: 15rem;
+  width: 80rem;
+  height: 12rem;
   overflow-x: scroll;
   margin: 1rem;
 `;
