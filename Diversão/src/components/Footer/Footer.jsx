@@ -1,49 +1,33 @@
 import React from "react";
-import "./footerCss.css";
+import * as Styled from "./Footer.style";
 import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
     <React.Fragment>
-      <footer className="footerContainer">
-        <section className="containerRow">
+      <Styled.FooterContainer>
+        <Styled.FooterRow>
           <div className="firstMenu">
-            <h4 className="footerTittle">Garcia.Imoveis</h4>
+            <Styled.FooterTittle>Garcia.Moveis</Styled.FooterTittle>
           </div>
-          <div className="secondMenu">
-            <h5 className="footerTittle">Contato</h5>
-            <div className="footerList1">
-              <li>+99 85 1871-8094</li>
-              <li>kyoukugenryu@gmail.com</li>
-            </div>
-            <div className="footerList2">
-              <li>Isola Maggiore, 06069, Tuoro sul Trasimeno</li>
-              <li>Province of Perugia, Italy</li>
-            </div>
-          </div>
-          <div className="thirdMenu">
-            <h6 className="footerTittle">Informações</h6>
-            <li>
-              <Link to={"/products"} className="link">
-                Produtos
-              </Link>
-            </li>
-            <li>
-              <Link to={"/contact"} className="link">
-                Contato
-              </Link>
-            </li>
-            <li>
-              <Link to={"/faq"} className="link">
-                FAQ
-              </Link>
-            </li>
-          </div>
-        </section>
+
+          <Styled.FooterList>
+            <Styled.FooterTittle>Paginas Criadas</Styled.FooterTittle>
+            <Styled.FooterLnk to={"/produtos"}>
+              Pagina de Produtos
+            </Styled.FooterLnk>
+
+            <Styled.FooterLnk to={"/contact"}>
+              Pagina do Carrinho
+            </Styled.FooterLnk>
+
+            <Styled.FooterLnk to={"/faq"}>Pagina de Checkout</Styled.FooterLnk>
+          </Styled.FooterList>
+        </Styled.FooterRow>
         <span className="footerSpan">
-          Pani.Di.Garcia@ Alguns direitos reservados.
+          Garcia.Moveis@ Alguns direitos reservados.
         </span>
-      </footer>
+      </Styled.FooterContainer>
     </React.Fragment>
   );
 };
