@@ -9,6 +9,9 @@ export const CheckoutContainer = styled.div`
   align-items: center;
   width: 100%;
   gap: 5rem;
+  background-color:#ccc;
+  padding: 30px;
+  
 `;
 
 export const CheckoutTittle = styled.div`
@@ -26,6 +29,8 @@ flex: 2;
   padding: 20px;
   box-sizing: border-box;
   align-items: center;
+  background-color:white;
+  border-radius:10px;
 `;
 
 export const CheckoutPaymethod = styled.div`
@@ -33,6 +38,8 @@ export const CheckoutPaymethod = styled.div`
   width: 34%;
   padding: 20px;
   box-sizing: border-box;
+  background-color:white;
+  border-radius:10px;
 `;
 
 export const Table = styled.table`
@@ -94,14 +101,20 @@ export const Table = styled.table`
      }
 `;
 
+
+
 export const CheckoutButton = styled.button`
   width:250px;
   border-radius: 10px;
   height:45px;
-  background-color:gray;
-  color: white;
-   margin: 0 10px;
-   margin: 25px;
+  background-color:yellow;
+  color: black;
+  margin: 25px;
+  border:none;
+  
+   &:hover{
+    background-color:#d6d30ec5;
+   }
   `;
 
 export const redirectButtons = styled.div`
