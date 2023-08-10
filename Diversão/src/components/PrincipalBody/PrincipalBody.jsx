@@ -2,9 +2,11 @@ import { useEffect, useState } from "react";
 import { ListaDeProdutos } from "../../services/ProdutosService/Produtos";
 import ImagemPrincipal from "../../assets/ExemploPaiFilho.jpg";
 import * as Styled from "./PrincipalBody.style";
+import { useNavigate } from "react-router";
 
 const PrincipalBody = () => {
   const [produtos, setProdutos] = useState();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const pegaProduto = async () => {
@@ -14,6 +16,9 @@ const PrincipalBody = () => {
     };
     pegaProduto();
   }, []);
+  const navigateProducts = () => {
+    navigate("/produtos");
+  };
   return (
     <Styled.MainContainer>
       <Styled.MainTitle>Feliz Dias dos Pais</Styled.MainTitle>
@@ -24,9 +29,7 @@ const PrincipalBody = () => {
         <Styled.MainCardContent>
           <Styled.MainCardTitle>
             Estamos com um
-            <Styled.MainCardSpecialText>
-              Super Desconto
-            </Styled.MainCardSpecialText>
+            <Styled.MainCardSpecialText>Desconto</Styled.MainCardSpecialText>
           </Styled.MainCardTitle>
           <Styled.MainCardTextRow>
             Para você
@@ -40,11 +43,13 @@ const PrincipalBody = () => {
             <Styled.MainCardSpecialText>3</Styled.MainCardSpecialText> ou mais
             moveis
           </Styled.MainCardTextRow>
-          <button>Venha escolher o seu</button>
+          <Styled.CardButton onClick={navigateProducts}>
+            Venha escolher o seu
+          </Styled.CardButton>
         </Styled.MainCardContent>
       </Styled.MainCard>
 
-      <Styled.MainFooter>
+      <Styled.MainFooter onClick={navigateProducts}>
         <Styled.MainFooterTitle>Veja nossos produtos</Styled.MainFooterTitle>
         <Styled.MainProductRow>
           {produtos &&
