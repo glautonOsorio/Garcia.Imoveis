@@ -14,6 +14,7 @@ const Create = async (newData) => {
       nome: newData.nome,
       preço: newData.preço,
       imagem: newData.imagem,
+      quantidade: 1,
     }),
     headers: {
       "Content-type": "application/json",

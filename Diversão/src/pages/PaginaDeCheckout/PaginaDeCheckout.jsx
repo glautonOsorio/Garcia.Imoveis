@@ -1,5 +1,9 @@
+import { CheckoutComponent } from "../../components/Checkout/CheckoutComponent";
+
 const PaginaDeCheckout = () => {
-  return <>Render is render</>;
+  return <>
+  <CheckoutComponent/>
+  </>;
 };
 
 export default PaginaDeCheckout;
