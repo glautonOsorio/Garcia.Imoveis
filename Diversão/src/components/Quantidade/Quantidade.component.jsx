@@ -1,24 +1,26 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import { CgMathPlus, CgMathMinus } from 'react-icons/cg';
 import * as Styled from './Quantidade.style';
 
 export const QuantidadeComponent = () => {
 
-    const [quantidade, setQuantidade] = useState(0);
+    const [qty, setQty] = useState(0);
 
     const handleAddQty = () => {
-        setQuantidade(quantidade + 1)
+        setQty(qty + 1);
     }
 
     const handleSubQty = () => {
-        setQuantidade(quantidade - 1);
+        if(qty > 0) {
+            setQty(qty - 1);
+        }
     }
 
     return(
         <Styled.QtyWrapper>
             <button onClick={handleAddQty}><CgMathPlus/></button>
-            <span>{quantidade}</span>
-            <button onClick={handleSubQty}><CgMathMinus/></button>          
+            <span>{qty}</span>
+            <button onClick={handleSubQty}><CgMathMinus/></button>       
         </Styled.QtyWrapper>
     );
 }
