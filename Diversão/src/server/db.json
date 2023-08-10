@@ -76,6 +76,27 @@
       "nome": "Cadeira de Criança colorida oito",
       "preço": "R$50.00",
       "imagem": "https://images-americanas.b2w.io/produtos/4605883643/imagens/cadeira-infantil-tramontina-tique-taque-em-polipropileno/4605883643_5_xlarge.jpg"
+    },
+    {
+      "produto_id": 3,
+      "nome": "Cadeira de Criança colorida tres",
+      "preço": "R$45.00",
+      "imagem": "https://images-americanas.b2w.io/produtos/5698332031/imagens/cadeira-banco-plastica-brinquedo-infantil-colorida-escola-un/5698332049_1_xlarge.jpg",
+      "id": 4
+    },
+    {
+      "produto_id": 3,
+      "nome": "Cadeira de Criança colorida tres",
+      "preço": "R$45.00",
+      "imagem": "https://images-americanas.b2w.io/produtos/5698332031/imagens/cadeira-banco-plastica-brinquedo-infantil-colorida-escola-un/5698332049_1_xlarge.jpg",
+      "id": 5
+    },
+    {
+      "produto_id": 3,
+      "nome": "Cadeira de Criança colorida tres",
+      "preço": "R$45.00",
+      "imagem": "https://images-americanas.b2w.io/produtos/5698332031/imagens/cadeira-banco-plastica-brinquedo-infantil-colorida-escola-un/5698332049_1_xlarge.jpg",
+      "id": 6
     }
   ]
 }

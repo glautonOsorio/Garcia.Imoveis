@@ -1,9 +1,10 @@
 import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
-
+import { HeaderWrapper, LogoWrapper, MenuWrapper } from './Header.styled';
+import logo from '../../assets/logo-garcia.png';
 import React, { useEffect, useState } from "react";
-import "./headerCss.css";
 import { Link, useNavigate } from "react-router-dom";
 import { Compra } from "../../services/CarrinhoService/CarrinhoService";
+
 
 const Header = () => {
   const [compra, setCompra] = useState();
@@ -21,24 +22,27 @@ const Header = () => {
   };
   return (
     <React.Fragment>
-      <header>
-        <div className="headerContainer">
-          <h1 className="headerH1" onClick={navigateHome}>
-            Garcia.Moveis
-          </h1>
-          <ul className="headerList">
-            <li>
-              <Link to={"/produtos"} className="link">
-                Produtos
+
+
+      <HeaderWrapper>
+            <LogoWrapper>
+                <Link to={'/'}>
+                    <img src={logo} alt="Logotipo" onClick={navigateHome} />
+                </Link>
+            </LogoWrapper>
+            <MenuWrapper>
+                <li>
+                    <Link to={'/produtos'}>Produtos</Link>
+                </li>
+                <li>
+              <Link to={"/carrinho"} className="link">
+                <AddShoppingCartIcon fontSize="medium" />
+                <span>{compra}</span> {/* Exibe a quantidade */}
               </Link>
             </li>
-            <li>
-              <AddShoppingCartIcon />
-              {compra}
-            </li>
-          </ul>
-        </div>
-      </header>
+            </MenuWrapper>
+        </HeaderWrapper>
+      
     </React.Fragment>
   );
 };

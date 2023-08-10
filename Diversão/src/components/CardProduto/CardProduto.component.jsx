@@ -36,16 +36,22 @@ const CardProduto = ({ item }) => {
 
   return (
     <StyledCardProduto>
+      <div className="corner-badge">#{item.id}</div>
+      <div className="container">
+      {/* Exibição do nome */}
+      <p className="title">{item.nome}</p>
       {/* Exibição da imagem */}
       <div className="image-container">
         <img src={item.imagem} alt={item.nome} loading="lazy" />
       </div>
       {/* Exibição do preço */}
-      <p className="price">{item.preço}</p>
-      {/* Exibição do nome */}
-      <p className="title">{item.nome}</p>
-      {/* Botão para adicionar ao carrinho */}
-      <AddToCartButton className="bt" onClick={adicionarAoCarrinho}>Adicionar ao Carrinho</AddToCartButton>
+      <div className="price-and-button">
+        <p className="price"><p className="price-tittle">preço:</p>{item.preço}</p>
+        <AddToCartButton className="bt" onClick={adicionarAoCarrinho}>
+          Adicionar ao Carrinho
+        </AddToCartButton>
+      </div>
+      </div>
     </StyledCardProduto>
   );
 };
