@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 export const StyledProduto = styled.div`
-  font-family: Verdana, sans-serif;
   margin: 0 auto;
   min-height: calc(100vh - 120px);
   max-width: 1200px;
