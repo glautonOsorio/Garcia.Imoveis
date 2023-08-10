@@ -1,19 +1,12 @@
-import { useContext } from 'react';
+import { ButtonComponent } from '../Button/Button.component';
 import * as Styled from './Resumo.style';
-import { MathContext } from '../../contexts/MathContext/Math.context';
 
 export const ResumoComponent = () => {
-
-  const { qty, totalPrc } = useContext(MathContext);
-
   return(
-        <Styled.SummaryWrapper>
-          <p>quantidade total</p>
-          <span>{qty}</span>
-          <p>valor total</p>
-          <span>{totalPrc}</span>
-          <button>Continuar Comprando</button>
-          <button>Finalizar Compra</button>
-        </Styled.SummaryWrapper>
+    <Styled.ResumoWrapper>
+      <p>aqui vai ser o resumo da sua compra</p>
+      <ButtonComponent type='button' text='Continue Comprando'/>
+      <ButtonComponent type='submit' text='Prosseguir para o Checkout'/>
+    </Styled.ResumoWrapper>
   );
 }

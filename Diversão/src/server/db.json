@@ -60,22 +60,25 @@
       "id": 1,
       "produto_id": 9,
       "nome": "Cadeira de Criança colorida",
-      "preço": "R$30.00",
-      "imagem": "https://images-americanas.b2w.io/produtos/01/00/img/3653861/0/3653861027_1GG.jpg"
+      "preco": "R$30.00",
+      "imagem": "https://images-americanas.b2w.io/produtos/01/00/img/3653861/0/3653861027_1GG.jpg",
+      "qty": 0
     },
     {
       "id": 2,
       "produto_id": 5,
       "nome": "Cadeira de Criança colorida",
-      "preço": "R$30.00",
-      "imagem": "https://images-americanas.b2w.io/produtos/01/00/img/3653861/0/3653861027_1GG.jpg"
+      "preco": "R$30.00",
+      "imagem": "https://images-americanas.b2w.io/produtos/01/00/img/3653861/0/3653861027_1GG.jpg",
+      "qty": 0
     },
     {
       "id": 3,
       "produto_id": 8,
       "nome": "Cadeira de Criança colorida",
-      "preço": "R$30.00",
-      "imagem": "https://images-americanas.b2w.io/produtos/01/00/img/3653861/0/3653861027_1GG.jpg"
+      "preco": "R$30.00",
+      "imagem": "https://images-americanas.b2w.io/produtos/01/00/img/3653861/0/3653861027_1GG.jpg",
+      "qty": 0
     }
   ]
 }

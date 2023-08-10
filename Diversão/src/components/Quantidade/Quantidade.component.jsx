@@ -1,4 +1,4 @@
-import { useContext, useState } from 'react';
+import { useState } from 'react';
 import { CgMathPlus, CgMathMinus } from 'react-icons/cg';
 import * as Styled from './Quantidade.style';
 
