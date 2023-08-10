@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link, useNavigate  } from "react-router-dom";
 import { Compra } from "../../services/CarrinhoService/CarrinhoService";
+import * as Styled from "./CheckoutComponent.style";
 
 export const CheckoutComponent = () => {
   const navigate = useNavigate(); 
@@ -56,13 +57,13 @@ export const CheckoutComponent = () => {
   }, [produtos]);
 
   return (
+    <Styled.CheckoutContainer>
     <div>
-      <h1>Checkout</h1>
-      {produtos.length === 0 ? (
+        {produtos.length === 0 ? (
         <p>O carrinho está vazio.</p>
       ) : (
         <div>
-        <h2>Itens no carrinho:</h2>
+        <Styled.CheckoutTittle>Itens no carrinho:</Styled.CheckoutTittle>
         <table>
           <thead>
             <tr>
@@ -84,15 +85,14 @@ export const CheckoutComponent = () => {
             ))}
           </tbody>
         </table>
-        <h2>Valor total</h2>
+        <Styled.CheckoutTittle>Valor total</Styled.CheckoutTittle>
         <p>{somaTotal.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</p>
       </div>
       )}
-      
-      <Link to="/carrinho">Verificar carrinho</Link>
-      <Link to="/produtos">Continuar comprando</Link>
-
-            <h2>Selecione o método de pagamento:</h2>
+      <Styled.CheckoutLink to="/carrinho">Verificar carrinho</Styled.CheckoutLink>
+      <Styled.CheckoutLink to="/produtos">Continuar comprando</Styled.CheckoutLink>
+          
+      <Styled.CheckoutTittle>Método de Pagamento</Styled.CheckoutTittle>
       <div>
         <label>
           <input
@@ -147,5 +147,6 @@ export const CheckoutComponent = () => {
       </button>
          
     </div>
+    </Styled.CheckoutContainer>
   );
 };
