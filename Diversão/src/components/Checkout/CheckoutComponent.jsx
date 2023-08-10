@@ -3,6 +3,17 @@ import { Link, useNavigate  } from "react-router-dom";
 import { Compra } from "../../services/CarrinhoService/CarrinhoService";
 import * as Styled from "./CheckoutComponent.style";
 
+const Button = ({ to, children }) => {
+  const navigate = useNavigate();
+  
+  const handleClick = () => {
+    navigate(to);
+  };
+
+  return <Styled.CheckoutButton onClick={handleClick}> {children}</Styled.CheckoutButton>;
+};
+
+
 export const CheckoutComponent = () => {
   const navigate = useNavigate(); 
   const [produtos, setProdutos] = useState([
@@ -10,7 +21,7 @@ export const CheckoutComponent = () => {
     {
       id: 5,
       nome: "Mesa de Criança colorida",
-      preço: 80.0,
+      preço: 80.99,
       quantidade: 1,
       imagem:
         "https://images-americanas.b2w.io/produtos/01/00/img/3653861/0/3653861027_1GG.jpg",
@@ -58,41 +69,54 @@ export const CheckoutComponent = () => {
 
   return (
     <Styled.CheckoutContainer>
-    <div>
+    <Styled.CheckoutCart>
         {produtos.length === 0 ? (
         <p>O carrinho está vazio.</p>
       ) : (
         <div>
-        <Styled.CheckoutTittle>Itens no carrinho:</Styled.CheckoutTittle>
-        <table>
+        <Styled.CheckoutTittle>Lista de Compras</Styled.CheckoutTittle>
+        <Styled.Table>
           <thead>
             <tr>
+              <th>Imagem</th>
               <th>Nome do Produto</th>
-              <th>Preço Unitário</th>
-              <th>Quantidade</th>
-              <th>Valor Total</th>
+              <th>Preço</th>
+              <th>Qtde.</th>
+              <th>Sub Total</th>
             </tr>
           </thead>
           <tbody>
             {produtos.map((item, index) => (
               <tr key={index}>
+                <td><img src={item.imagem} alt="product_image" /></td>
                 <td>{item.nome}</td>
-             
-                  <td>{item.preço.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</td>
+                         <td>{item.preço.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</td>
                   <td>{item.quantidade}</td>
                   <td>{(item.quantidade * item.preço).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</td>
               </tr>
             ))}
+               <tr key="total">
+                <td></td>
+                <td></td>
+                         <td></td>
+                  <td>Valor total </td>
+                  <td>{somaTotal.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</td>
+              </tr>
           </tbody>
-        </table>
-        <Styled.CheckoutTittle>Valor total</Styled.CheckoutTittle>
-        <p>{somaTotal.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</p>
+          </Styled.Table>
+        
       </div>
       )}
-      <Styled.CheckoutLink to="/carrinho">Verificar carrinho</Styled.CheckoutLink>
-      <Styled.CheckoutLink to="/produtos">Continuar comprando</Styled.CheckoutLink>
-          
+      <Styled.redirectButtons>
+        <Button to="/carrinho">Verificar carrinho</Button>
+        <Button to="/produtos">Continuar comprando</Button>
+        </Styled.redirectButtons>
+      </Styled.CheckoutCart>
+         
+          <Styled.CheckoutPaymethod>
       <Styled.CheckoutTittle>Método de Pagamento</Styled.CheckoutTittle>
+
+      <Styled.PaymentOptions>
       <div>
         <label>
           <input
@@ -141,12 +165,13 @@ export const CheckoutComponent = () => {
           Boleto Bancário
         </label>
       </div>
-
-      <button onClick={handlePayment} disabled={isCheckoutDisabled}>
+      </Styled.PaymentOptions>
+      <Styled.CheckoutButton onClick={handlePayment} disabled={isCheckoutDisabled}>
         Finalizar Compra
-      </button>
+        </Styled.CheckoutButton>
          
-    </div>
+      </Styled.CheckoutPaymethod>
+   
     </Styled.CheckoutContainer>
   );
 };

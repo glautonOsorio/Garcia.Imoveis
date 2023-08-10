@@ -1,24 +1,132 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
-export const CheckoutContainer = styled.footer`
+export const CheckoutContainer = styled.div`
   display: flex;
-  flex-direction: column;
-  font-family: "Times New Roman";
+  flex-direction: row;
+  justify-items: center;
+  justify-content: space-between;
+  align-items: center;
   width: 100%;
-  background-image: linear-gradient(to top, #232f3e 80%, #131a22);
-  color: #ffebc7;
-  gap: 1rem;
+  gap: 5rem;
 `;
 
-export const CheckoutTittle = styled.h4`
-  font-size: 2rem;
+export const CheckoutTittle = styled.div`
+    display:flex;
+    align-items: center;
+    font-size: 2rem;
+  color: black;
+  margin: 1rem;
 `;
 
-export const CheckoutLink = styled(Link)`
-  text-decoration: none !important;
-  list-style-type: none;
-  font-size: 1rem;
-  color: #ffebc7;
+
+export const CheckoutCart = styled.div`
+flex: 2;
+  width: 66%;
+  padding: 20px;
+  box-sizing: border-box;
+  align-items: center;
+`;
+
+export const CheckoutPaymethod = styled.div`
+ flex: 1;
+  width: 34%;
+  padding: 20px;
+  box-sizing: border-box;
+`;
+
+export const Table = styled.table`
+  width: 100%;
+  text-align: center;
+
+  thead {
+    background: #ccc;
+    font-weight: bold;
+    color: black;
+  }
+
+  tbody {
+    margin: 1px;
+    border-color: black;
+  }
+
+  th,
+  td {
+    padding: 2px 0;
+  }
+
+  tbody tr td img {
+    max-width: 80%;
+    height: auto;
+  }
+
+  tbody tr:last-child td {
+    font-weight: bold;
+  }
+
+  @media screen and (max-width: 480px) {
+    thead {
+      display: none;
+    }
+
+    tbody td {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  @media only screen and (min-width: 1200px) {
+    tbody tr td:nth-child(1) {
+      width: 15%;
+    }
+    tbody tr td:nth-child(2) {
+      width: 50%;
+    }
+    tbody tr td:nth-child(3) {
+      width: 10%;
+    }
+    tbody tr td:nth-child(4) {
+      width: 5%;
+    }
+    tbody tr td:nth-child(5) {
+      width: 15%;
+    }
+     }
+`;
+
+export const CheckoutButton = styled.button`
+  width:250px;
+  border-radius: 10px;
+  height:45px;
+  background-color:gray;
+  color: white;
+   margin: 0 10px;
+   margin: 25px;
+  `;
+
+export const redirectButtons = styled.div`
+width:100%;
+display: flex;
+  justify-content: space-between;
+  margin-top:5%;
+  
+ `;
+
+export const PaymentOptions = styled.div`
+display: flex;
+flex-direction: column;
+
+div {
+  margin: 5px 0;
+}
+
+label {
+  display: flex;
+  align-items: center;
+}
+
+input {
+  margin-right: 5px;
+}
 `;
 
