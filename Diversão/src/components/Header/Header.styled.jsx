@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 
+
 export const HeaderWrapper = styled.nav`
     display: flex;
     flex-direction: row;
@@ -28,6 +29,21 @@ export const MenuWrapper = styled.ul`
         font-size: 20px;
         font-weight: 500;
     }
+
+    div {
+      text-align: right;
+      margin-right: 10px;
+    span {
+      font-size: 16px;
+      color: #c6c6c6;
+    }
+    strong {
+      font-size: 14px;
+      display: block;
+      color: #fff;
+      padding:4px;
+    }
+  }
 
     a {
         text-decoration: none;

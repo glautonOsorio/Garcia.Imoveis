@@ -25,24 +25,31 @@ const Header = () => {
 
 
       <HeaderWrapper>
-            <LogoWrapper>
-                <Link to={'/'}>
-                    <img src={logo} alt="Logotipo" onClick={navigateHome} />
-                </Link>
-            </LogoWrapper>
-            <MenuWrapper>
-                <li>
-                    <Link to={'/produtos'}>Produtos</Link>
-                </li>
-                <li>
-              <Link to={"/carrinho"} className="link">
+        <LogoWrapper>
+          <Link to={'/'}>
+            <img src={logo} alt="Logotipo" onClick={navigateHome} />
+          </Link>
+        </LogoWrapper>
+        <MenuWrapper>
+          <li>
+            <Link to={'/produtos'}>Produtos</Link>
+          </li>
+          <li>
+            <Link to={"/carrinho"} className="link">
+              <div>
+                <strong>Meu carrinho</strong>
+                <span>
+                  {{ compra } === 1 ? `${compra} item` : `${compra} itens`}
+                </span> {/* Exibe a quantidade */}
                 <AddShoppingCartIcon fontSize="medium" />
-                <span>{compra}</span> {/* Exibe a quantidade */}
-              </Link>
-            </li>
-            </MenuWrapper>
-        </HeaderWrapper>
-      
+              </div>
+
+            </Link>
+          </li>
+
+        </MenuWrapper>
+      </HeaderWrapper>
+
     </React.Fragment>
   );
 };
