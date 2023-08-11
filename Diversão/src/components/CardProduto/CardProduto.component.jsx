@@ -39,14 +39,14 @@ const CardProduto = ({ item }) => {
       <div className="corner-badge">#{item.id}</div>
       <div className="container">
       {/* Exibição do nome */}
-      <p className="title">{item.nome}</p>
+      <span className="title">{item.nome}</span>
       {/* Exibição da imagem */}
       <div className="image-container">
         <img src={item.imagem} alt={item.nome} loading="lazy" />
       </div>
       {/* Exibição do preço */}
       <div className="price-and-button">
-        <p className="price"><p className="price-tittle">preço:</p>{item.preço}</p>
+        <span className="price"><span className="price-tittle">preço:</span>{item.preço}</span>
         <AddToCartButton className="bt" onClick={adicionarAoCarrinho}>
           Adicionar ao Carrinho
         </AddToCartButton>
