@@ -44,8 +44,10 @@ const PrincipalBody = () => {
         </div>
         <Styled.MainCardContent>
           <Styled.MainCardTitle>
+
             Estamos com um
             <Styled.MainCardSpecialText>Desconto</Styled.MainCardSpecialText>
+
           </Styled.MainCardTitle>
           <Styled.MainCardTextRow>
             Para você
