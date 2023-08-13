@@ -23,7 +23,7 @@ const PrincipalBody = () => {
         </div>
         <Styled.MainCardContent>
           <Styled.MainCardTitle>
-            Estamos com um
+            Estamos com uM
             <Styled.MainCardSpecialText>
               Super Desconto
             </Styled.MainCardSpecialText>
