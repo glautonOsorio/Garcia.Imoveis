@@ -1,14 +1,23 @@
 import React from "react";
+import logo from "../../assets/logo-garcia.png";
 import * as Styled from "./Footer.style";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Footer = () => {
+  const navigate = useNavigate();
+  const navigateHome = () => {
+    navigate("/");
+  };
   return (
     <React.Fragment>
       <Styled.FooterContainer>
         <Styled.FooterRow>
           <div className="firstMenu">
-            <Styled.FooterTittle>Garcia.Moveis</Styled.FooterTittle>
+            <Styled.FooterImage
+              src={logo}
+              alt="Logotipo"
+              onClick={navigateHome}
+            />
           </div>
 
           <Styled.FooterList>
@@ -17,11 +26,13 @@ const Footer = () => {
               Pagina de Produtos
             </Styled.FooterLnk>
 
-            <Styled.FooterLnk to={"/contact"}>
+            <Styled.FooterLnk to={"/carrinho"}>
               Pagina do Carrinho
             </Styled.FooterLnk>
 
-            <Styled.FooterLnk to={"/faq"}>Pagina de Checkout</Styled.FooterLnk>
+            <Styled.FooterLnk to={"/chekout"}>
+              Pagina de Checkout
+            </Styled.FooterLnk>
           </Styled.FooterList>
         </Styled.FooterRow>
         <span className="footerSpan">

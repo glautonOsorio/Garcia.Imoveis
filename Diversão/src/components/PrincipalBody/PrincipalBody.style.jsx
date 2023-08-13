@@ -16,7 +16,7 @@ export const MainTitle = styled.h1`
 export const MainCard = styled.div`
   display: flex;
   flex-direction: row;
-  background-color: #6495ed;
+  background-color: #00008b;
   margin: 1rem;
   box-shadow: 0.2rem 0.2rem 0.2rem #485769;
 `;
@@ -31,7 +31,7 @@ export const MainCardContent = styled.div`
   gap: 2rem;
   margin: 1rem;
   font-size: 2rem;
-  color: #000000;
+  color: #fff;
 `;
 
 export const CardButton = styled.button`

@@ -9,37 +9,35 @@ export const CheckoutContainer = styled.div`
   align-items: center;
   width: 100%;
   gap: 5rem;
-  background-color:#ccc;
+  background-color: #ccc;
   padding: 30px;
-  
 `;
 
 export const CheckoutTittle = styled.div`
-    display:flex;
-    align-items: center;
-    font-size: 2rem;
+  display: flex;
+  align-items: center;
+  font-size: 2rem;
   color: black;
   margin: 1rem;
 `;
 
-
 export const CheckoutCart = styled.div`
-flex: 2;
+  flex: 2;
   width: 66%;
   padding: 20px;
   box-sizing: border-box;
   align-items: center;
-  background-color:white;
-  border-radius:10px;
+  background-color: white;
+  border-radius: 10px;
 `;
 
 export const CheckoutPaymethod = styled.div`
- flex: 1;
+  flex: 1;
   width: 34%;
   padding: 20px;
   box-sizing: border-box;
-  background-color:white;
-  border-radius:10px;
+  background-color: white;
+  border-radius: 10px;
 `;
 
 export const Table = styled.table`
@@ -98,48 +96,44 @@ export const Table = styled.table`
     tbody tr td:nth-child(5) {
       width: 15%;
     }
-     }
+  }
 `;
-
-
 
 export const CheckoutButton = styled.button`
-  width:250px;
+  width: 250px;
   border-radius: 10px;
-  height:45px;
-  background-color:yellow;
+  height: 45px;
+  background-color: yellow;
   color: black;
   margin: 25px;
-  border:none;
-  
-   &:hover{
-    background-color:#d6d30ec5;
-   }
-  `;
+  border: none;
 
-export const redirectButtons = styled.div`
-width:100%;
-display: flex;
-  justify-content: space-between;
-  margin-top:5%;
-  
- `;
-
-export const PaymentOptions = styled.div`
-display: flex;
-flex-direction: column;
-
-div {
-  margin: 5px 0;
-}
-
-label {
-  display: flex;
-  align-items: center;
-}
-
-input {
-  margin-right: 5px;
-}
+  &:hover {
+    background-color: #d6d30ec5;
+  }
 `;
 
+export const redirectButtons = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 5%;
+`;
+
+export const PaymentOptions = styled.div`
+  display: flex;
+  flex-direction: column;
+
+  div {
+    margin: 5px 0;
+  }
+
+  label {
+    display: flex;
+    align-items: center;
+  }
+
+  input {
+    margin-right: 5px;
+  }
+`;

@@ -23,13 +23,19 @@ export const CarrinhoComponent = () => {
       {carrinho.length > 0 ? (
         carrinho.map((produto) => {
           return (
-            <Styled.ProductWrapper key={produto.id}>
-              <img src={produto.imagem} alt="Imagem do Produto" />
-              <Styled.ProductFeaturesWrapper>
+            <Styled.ProductFeaturesWrapper key={produto.id}>
+              <Styled.ProductImage
+                src={produto.imagem}
+                alt="Imagem do Produto"
+              />
+              <div>
                 <h2>{produto.nome}</h2>
-                <p>{produto.preco}</p>
-              </Styled.ProductFeaturesWrapper>
-            </Styled.ProductWrapper>
+                <span>
+                  {produto.moeda}
+                  {produto.preço}
+                </span>
+              </div>
+            </Styled.ProductFeaturesWrapper>
           );
         })
       ) : (

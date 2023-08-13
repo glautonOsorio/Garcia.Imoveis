@@ -1,56 +1,61 @@
 import React from "react";
-import { StyledCardProduto, AddToCartButton } from "./CardProduto.styled"; 
-import { Link } from "react-router-dom";
+import { StyledCardProduto, AddToCartButton } from "./CardProduto.styled";
+import { Link, useNavigate } from "react-router-dom";
 
 const CardProduto = ({ item }) => {
-
   // Função para adicionar o item ao carrinho
+  const navigate = useNavigate();
   const adicionarAoCarrinho = () => {
-
     // Construindo o objeto do novo item do carrinho
     const novoItemCarrinho = {
       produto_id: item.id,
       nome: item.nome,
+      moeda: item.moeda,
       preço: item.preço,
-      imagem: item.imagem
+      imagem: item.imagem,
     };
 
     // Fazendo uma requisição POST para adicionar o item ao carrinho
     fetch("http://localhost:3000/carrinho", {
       method: "POST",
       headers: {
-        "Content-Type": "application/json"
+        "Content-Type": "application/json",
       },
-      body: JSON.stringify(novoItemCarrinho)
+      body: JSON.stringify(novoItemCarrinho),
     })
-      .then(response => response.json())
-      .then(data => {
+      .then((response) => response.json())
+      .then((data) => {
         console.log("Item adicionado ao carrinho:", data);
-        // Atualizar o estado do carrinho automaticamente aqui 
+        // Atualizar o estado do carrinho automaticamente aqui
         //** talvez vamos ter que criar um context ou deixar a função no app.jsx que encapsula tudo
       })
-      .catch(error => {
+      .catch((error) => {
         console.error("Erro ao adicionar item ao carrinho:", error);
       });
+    navigate("/carrinho");
   };
 
   return (
     <StyledCardProduto>
       <div className="corner-badge">#{item.id}</div>
       <div className="container">
-      {/* Exibição do nome */}
-      <p className="title">{item.nome}</p>
-      {/* Exibição da imagem */}
-      <div className="image-container">
-        <img src={item.imagem} alt={item.nome} loading="lazy" />
-      </div>
-      {/* Exibição do preço */}
-      <div className="price-and-button">
-        <p className="price"><p className="price-tittle">preço:</p>{item.preço}</p>
-        <AddToCartButton className="bt" onClick={adicionarAoCarrinho}>
-          Adicionar ao Carrinho
-        </AddToCartButton>
-      </div>
+        {/* Exibição do nome */}
+        <p className="title">{item.nome}</p>
+        {/* Exibição da imagem */}
+        <div className="image-container">
+          <img src={item.imagem} alt={item.nome} loading="lazy" />
+        </div>
+        {/* Exibição do preço */}
+        <div className="price-and-button">
+          <span className="price">
+            <p className="price-tittle">preço:</p>
+            {item.moeda}
+            {item.preço}
+          </span>
+          <AddToCartButton className="bt" onClick={adicionarAoCarrinho}>
+            Adicionar ao Carrinho
+          </AddToCartButton>
+        </div>
       </div>
     </StyledCardProduto>
   );
