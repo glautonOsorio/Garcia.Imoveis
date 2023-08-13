@@ -5,17 +5,33 @@ import * as Styled from "./PrincipalBody.style";
 import { useNavigate } from "react-router";
 
 const PrincipalBody = () => {
-  const [produtos, setProdutos] = useState();
+  const [produtos, setProdutos] = useState([]);
+  const [preços, setPreços] = useState();
+
   const navigate = useNavigate();
 
-  useEffect(() => {
-    const pegaProduto = async () => {
-      await ListaDeProdutos.Get().then((produto) => {
-        setProdutos(produto);
+  const pegaProduto = async () => {
+    await ListaDeProdutos.Get().then((produto) => {
+      setProdutos(produto);
+    });
+  };
+  const soma = async () => {
+    await ListaDeProdutos.Get().then((produto) => {
+      let total = 0;
+      produto.forEach(async (element) => {
+        let somaTotal = await (total += Number(
+          element.preço * element.quantidade
+        ));
+        setPreços(Number(somaTotal));
       });
-    };
+    });
+  };
+  let valor = preços - preços / 5;
+  useEffect(() => {
     pegaProduto();
+    soma();
   }, []);
+  console.log(valor);
   const navigateProducts = () => {
     navigate("/produtos");
   };
@@ -46,6 +62,7 @@ const PrincipalBody = () => {
           <Styled.CardButton onClick={navigateProducts}>
             Venha escolher o seu
           </Styled.CardButton>
+          {preços && <p> {preços} </p>}
         </Styled.MainCardContent>
       </Styled.MainCard>
 
