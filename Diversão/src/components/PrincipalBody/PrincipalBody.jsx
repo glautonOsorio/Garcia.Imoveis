@@ -5,9 +5,9 @@ import * as Styled from "./PrincipalBody.style";
 import { useNavigate } from "react-router";
 
 const PrincipalBody = () => {
-  const [produtos, setProdutos] = useState();
-  const navigate = useNavigate();
+  const [produtos, setProdutos] = useState([]);
 
+  const navigate = useNavigate();
   useEffect(() => {
     const pegaProduto = async () => {
       await ListaDeProdutos.Get().then((produto) => {
@@ -16,6 +16,7 @@ const PrincipalBody = () => {
     };
     pegaProduto();
   }, []);
+
   const navigateProducts = () => {
     navigate("/produtos");
   };

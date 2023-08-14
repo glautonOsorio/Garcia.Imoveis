@@ -14,6 +14,7 @@ const Create = async (newData) => {
       nome: newData.nome,
       preço: newData.preço,
       imagem: newData.imagem,
+      quantidade: 1,
     }),
     headers: {
       "Content-type": "application/json",
@@ -35,7 +36,7 @@ const Delete = async (id) => {
     },
   })
     .then((res) => {
-      alert("Deletado com sucesso");
+      alert("Produto deletado com sucesso");
     })
     .catch((err) => {
       alert(`Erro ao deletar ${err.message}`);

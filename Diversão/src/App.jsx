@@ -2,7 +2,10 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 import "./App.css";
 import PaginaPrincipal from "./pages/PaginaPrincipal/PaginaPrincipal";
+import PaginaDeCheckout from "./pages/PaginaDeCheckout/PaginaDeCheckout";
 import PaginaDeProdutos from "./pages/PaginaDeProdutos/PaginaDeProdutos";
+import { PaginaDeCompra } from "./pages/PaginaDeCompra/PaginaDeCompra";
+import PaginaDoCarrinho from "./pages/PaginaDoCarrinhoGlauton/PaginaDoCarrinho";
 
 function App() {
   return (
@@ -10,9 +13,10 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" element={<PaginaPrincipal />} />
-          <Route path="/produtos" element={<PaginaDeProdutos />}/>
-          <Route path="/carrinho" />
-          <Route path="/checkout" />
+          <Route path="/produtos" element={<PaginaDeProdutos />} />
+          <Route path="/carrinho" element={<PaginaDeCompra />} />
+          <Route path="/carrinho-glauton" element={<PaginaDoCarrinho />} />
+          <Route path="/checkout" element={<PaginaDeCheckout />} />
           <Route path="/*" />
         </Routes>
       </Router>
