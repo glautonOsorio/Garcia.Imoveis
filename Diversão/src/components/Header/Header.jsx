@@ -35,13 +35,17 @@ const Header = () => {
           </Link>
         </LogoWrapper>
         <MenuWrapper>
+        <li>
+            <Link to={'/'}>Inicio</Link>
+          </li>
           <li>
             <Link to={'/produtos'}>Produtos</Link>
           </li>
           <li>
             <Link to={"/carrinho"} className="link">
-              <div>
+              <div >
                 <strong>Meu carrinho</strong>
+                </div><div>
                 <span>
                 {compra === 1 
                 ? `${compra} item`
