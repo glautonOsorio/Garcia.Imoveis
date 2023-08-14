@@ -2,23 +2,20 @@ import styled from "styled-components";
 
 export const ProductsWrapper = styled.div`
   display: flex;
-  flex-direction: column;
   text-align: center;
-  background-color: #ffffff;
-  margin: 1rem;
-  width: 50rem;
+  flex-direction: column;
+  background-color: yellow;
 `;
 
-export const ProductImage = styled.img`
-  width: 15%;
+export const ProductWrapper = styled.div`
+  display: flex;
+  background-color: red;
+  margin-bottom: 10px;
 `;
 
 export const ProductFeaturesWrapper = styled.div`
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin: 1rem;
-  width: 45rem;
-  gap: 1rem;
 `;

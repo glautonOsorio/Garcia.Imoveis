@@ -34,7 +34,12 @@ const Carrinho = () => {
     };
     Soma();
   }, []);
-
+  const redirectToProducts = () => {
+    navigate("/produtos");
+  };
+  const redirectToCheckout = () => {
+    navigate("/checkout");
+  };
   return (
     <Styled.CarrinhoContainer>
       <Styled.CarrinhoContent>
@@ -59,18 +64,22 @@ const Carrinho = () => {
               );
             })}
         </Styled.ProductOverflow>
-        <div className="button-row">
+        <Styled.ProductBottomRow>
           <div>
-            <button>Comprar mais produtos</button>
+            <Styled.ProductButton onClick={redirectToProducts}>
+              Comprar mais produtos
+            </Styled.ProductButton>
           </div>
           <div>
             <span>Preço atual:</span>
             <h2>{somaPreços}</h2>
           </div>
           <div>
-            <button>Terminar a Compra</button>
+            <Styled.ProductButton onClick={redirectToCheckout}>
+              Terminar a Compra
+            </Styled.ProductButton>
           </div>
-        </div>
+        </Styled.ProductBottomRow>
       </Styled.CarrinhoContent>
     </Styled.CarrinhoContainer>
   );

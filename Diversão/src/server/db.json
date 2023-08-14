@@ -104,6 +104,14 @@
       "preço": "55.00",
       "imagem": "https://images-americanas.b2w.io/produtos/4656309756/imagens/cadeira-infantil-plastica-p-crianca-azul-carros-decorada-usual-utilidades/4656309756_1_xlarge.jpg",
       "id": 5
+    },
+    {
+      "produto_id": 3,
+      "nome": "Cadeira de Criança colorida tres",
+      "moeda": "R$",
+      "preço": "45.00",
+      "imagem": "https://images-americanas.b2w.io/produtos/5698332031/imagens/cadeira-banco-plastica-brinquedo-infantil-colorida-escola-un/5698332049_1_xlarge.jpg",
+      "id": 6
     }
   ]
 }

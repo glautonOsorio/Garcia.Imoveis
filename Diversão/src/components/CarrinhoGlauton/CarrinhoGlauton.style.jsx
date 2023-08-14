@@ -23,7 +23,6 @@ export const CarrinhoTitulo = styled.h1`
 `;
 
 export const ProductOverflow = styled.div`
-  border: 1px solid red;
   margin: 1rem;
   overflow-y: scroll;
   height: 28rem;
@@ -45,5 +44,27 @@ export const ProductCollum = styled.div`
   flex-direction: column;
   gap: 0.5rem;
   font-size: 1rem;
-  color: #de8705;
+  color: #000;
+`;
+
+export const ProductBottomRow = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 1rem;
+`;
+
+export const ProductButton = styled.button`
+  width: 12rem;
+  height: 4rem;
+  font-size: 1.2rem;
+  color: whitesmoke;
+  background-color: #de8705;
+  color: black;
+  border-color: black;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  &:hover {
+    background-color: #ffd700;
+  }
 `;
