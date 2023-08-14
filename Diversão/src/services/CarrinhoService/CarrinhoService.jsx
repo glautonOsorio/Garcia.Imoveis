@@ -36,7 +36,7 @@ const Delete = async (id) => {
     },
   })
     .then((res) => {
-      alert("Deletado com sucesso");
+      alert("Produto deletado com sucesso");
     })
     .catch((err) => {
       alert(`Erro ao deletar ${err.message}`);

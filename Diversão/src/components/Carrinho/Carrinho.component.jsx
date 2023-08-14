@@ -1,10 +1,13 @@
 import * as Styled from "./Carrinho.style";
 import { useEffect, useState } from "react";
+import { ButtonComponent } from "../Button/Button.component";
 import { Compra } from "../../services/CarrinhoService/CarrinhoService";
+import { Button } from "../Button/Button.style";
+import { useNavigate } from "react-router-dom";
 
 export const CarrinhoComponent = () => {
   const [carrinho, setCarrinho] = useState([]);
-
+  const navigate = useNavigate();
   useEffect(() => {
     const fetchCarrinho = async () => {
       try {
@@ -17,30 +20,41 @@ export const CarrinhoComponent = () => {
     fetchCarrinho();
   }, []);
 
+  const redirectToNewPage = () => {
+    navigate("/carrinho-glauton");
+  };
+
   return (
-    <Styled.ProductsWrapper>
-      <h2>Meu Carrinho</h2>
-      {carrinho.length > 0 ? (
-        carrinho.map((produto) => {
-          return (
-            <Styled.ProductFeaturesWrapper key={produto.id}>
-              <Styled.ProductImage
-                src={produto.imagem}
-                alt="Imagem do Produto"
-              />
-              <div>
-                <h2>{produto.nome}</h2>
-                <span>
-                  {produto.moeda}
-                  {produto.preço}
-                </span>
-              </div>
-            </Styled.ProductFeaturesWrapper>
-          );
-        })
-      ) : (
-        <p>Nenhum item no seu carrinho</p>
-      )}
-    </Styled.ProductsWrapper>
+    <>
+      <ButtonComponent
+        type="button"
+        onClick={redirectToNewPage}
+        text="Pagina Interessante"
+      />
+      <Styled.ProductsWrapper>
+        <h2>Meu Carrinho</h2>
+        {carrinho.length > 0 ? (
+          carrinho.map((produto) => {
+            return (
+              <Styled.ProductFeaturesWrapper key={produto.id}>
+                <Styled.ProductImage
+                  src={produto.imagem}
+                  alt="Imagem do Produto"
+                />
+                <div>
+                  <h2>{produto.nome}</h2>
+                  <span>
+                    {produto.moeda}
+                    {produto.preço}
+                  </span>
+                </div>
+              </Styled.ProductFeaturesWrapper>
+            );
+          })
+        ) : (
+          <p>Nenhum item no seu carrinho</p>
+        )}
+      </Styled.ProductsWrapper>
+    </>
   );
 };

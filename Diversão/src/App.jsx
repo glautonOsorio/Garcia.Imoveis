@@ -5,6 +5,7 @@ import PaginaPrincipal from "./pages/PaginaPrincipal/PaginaPrincipal";
 import PaginaDeCheckout from "./pages/PaginaDeCheckout/PaginaDeCheckout";
 import PaginaDeProdutos from "./pages/PaginaDeProdutos/PaginaDeProdutos";
 import { PaginaDeCompra } from "./pages/PaginaDeCompra/PaginaDeCompra";
+import PaginaDoCarrinho from "./pages/PaginaDoCarrinhoGlauton/PaginaDoCarrinho";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
           <Route path="/" element={<PaginaPrincipal />} />
           <Route path="/produtos" element={<PaginaDeProdutos />} />
           <Route path="/carrinho" element={<PaginaDeCompra />} />
+          <Route path="/carrinho-glauton" element={<PaginaDoCarrinho />} />
           <Route path="/checkout" element={<PaginaDeCheckout />} />
           <Route path="/*" />
         </Routes>
