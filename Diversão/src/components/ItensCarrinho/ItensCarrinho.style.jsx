@@ -9,7 +9,7 @@ export const CartSection = styled.section`
   width: 350px;
   margin-top: 108px;
   box-shadow: -5px 0 5px rgba(0, 0, 0, 0.2);
-  transform: translateX(100%);
+  transform: translateX(110%);
   transition: transform 0.3s ease-in-out;
   
   &.cart--active {
