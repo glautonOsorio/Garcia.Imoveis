@@ -5,6 +5,7 @@ import PaginaPrincipal from "./pages/PaginaPrincipal/PaginaPrincipal";
 import PaginaDeCheckout from "./pages/PaginaDeCheckout/PaginaDeCheckout";
 import PaginaDeProdutos from "./pages/PaginaDeProdutos/PaginaDeProdutos";
 import Provider from "./contexts/AppProvider";
+import ItensCarrinho from "./components/ItensCarrinho/ItensCarrinho.component";
 
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
           <Route path="/checkout" element={<PaginaDeCheckout/>}/>
           <Route path="/*" />
         </Routes>
+        <ItensCarrinho/>
         </Provider>
       </Router>
     </div>

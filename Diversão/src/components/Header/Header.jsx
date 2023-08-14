@@ -2,14 +2,14 @@ import { useContext } from 'react';
 import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 import { HeaderWrapper, LogoWrapper, MenuWrapper } from './Header.styled';
 import logo from '../../assets/logo-garcia.png';
-import React, { useEffect, useState } from "react";
+import  { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { Compra } from "../../services/CarrinhoService/CarrinhoService";
 import AppContext from "../../contexts/AppContext";
 
 
 const Header = () => {
-  const {cartItems} = useContext(AppContext);
+  const {cartItems, setIsCartVisible} = useContext(AppContext);
 
   const [compra, setCompra] = useState();
   const navigate = useNavigate();
@@ -25,9 +25,6 @@ const Header = () => {
     navigate("/");
   };
   return (
-    <React.Fragment>
-
-
       <HeaderWrapper>
         <LogoWrapper>
           <Link to={'/'}>
@@ -45,7 +42,7 @@ const Header = () => {
             <Link to={"/carrinho"} className="link">
               <div >
                 <strong>Meu carrinho</strong>
-                </div><div>
+                </div><div onMouseOver={() => setIsCartVisible(true)} onMouseOut={() => setIsCartVisible(false)}>
                 <span>
                 {compra === 1 
                 ? `${compra} item`
@@ -53,7 +50,7 @@ const Header = () => {
                 ? `${compra} itens`
                 : 'vazio'}
                 </span> {/* Exibe a quantidade */}
-                <AddShoppingCartIcon fontSize="medium" />
+                <AddShoppingCartIcon fontSize="medium"/>
               </div>
 
             </Link>
@@ -62,7 +59,6 @@ const Header = () => {
         </MenuWrapper>
       </HeaderWrapper>
 
-    </React.Fragment>
   );
 };
 

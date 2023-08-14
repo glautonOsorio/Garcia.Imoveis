@@ -9,6 +9,7 @@ export const HeaderWrapper = styled.nav`
     padding: 20px;
     background-color: #00121c;
     gap: 10px;
+    z-index: 1;
 `;
 
 export const LogoWrapper = styled.div`
