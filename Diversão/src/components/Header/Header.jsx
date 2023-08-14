@@ -39,7 +39,11 @@ const Header = () => {
               <div>
                 <strong>Meu carrinho</strong>
                 <span>
-                  {{ compra } === 1 ? `${compra} item` : `${compra} itens`}
+                {compra === 1 
+                ? `${compra} item`
+                : compra > 1
+                ? `${compra} itens`
+                : 'vazio'}
                 </span> {/* Exibe a quantidade */}
                 <AddShoppingCartIcon fontSize="medium" />
               </div>

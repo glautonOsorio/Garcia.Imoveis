@@ -1,4 +1,4 @@
-import React from "react";
+
 import { useState, useEffect } from "react";
 import CardProduto from "../../components/CardProduto/CardProduto.component";
 import { StyledContent, StyledProduto } from "./PaginaDeProduto.styled";
