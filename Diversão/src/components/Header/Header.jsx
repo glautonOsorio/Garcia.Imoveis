@@ -1,12 +1,16 @@
+import { useContext } from 'react';
 import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 import { HeaderWrapper, LogoWrapper, MenuWrapper } from './Header.styled';
 import logo from '../../assets/logo-garcia.png';
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { Compra } from "../../services/CarrinhoService/CarrinhoService";
+import AppContext from "../../contexts/AppContext";
 
 
 const Header = () => {
+  const {cartItems} = useContext(AppContext);
+
   const [compra, setCompra] = useState();
   const navigate = useNavigate();
   useEffect(() => {
@@ -16,7 +20,7 @@ const Header = () => {
       });
     };
     quantidadeCompra();
-  }, []);
+  }, [cartItems]);
   const navigateHome = () => {
     navigate("/");
   };

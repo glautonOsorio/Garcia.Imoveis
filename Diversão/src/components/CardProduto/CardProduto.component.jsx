@@ -1,8 +1,12 @@
-import React from "react";
+/* eslint-disable react/prop-types */
+import { useContext } from 'react';
 import { StyledCardProduto, AddToCartButton } from "./CardProduto.styled"; 
-import { Link } from "react-router-dom";
+import AppContext from "../../contexts/AppContext";
+
 
 const CardProduto = ({ item }) => {
+
+  const {setCartItems} = useContext(AppContext);
 
   // Função para adicionar o item ao carrinho
   const adicionarAoCarrinho = () => {
@@ -26,6 +30,7 @@ const CardProduto = ({ item }) => {
       .then(response => response.json())
       .then(data => {
         console.log("Item adicionado ao carrinho:", data);
+        setCartItems(data)
         // Atualizar o estado do carrinho automaticamente aqui 
         //** talvez vamos ter que criar um context ou deixar a função no app.jsx que encapsula tudo
       })
