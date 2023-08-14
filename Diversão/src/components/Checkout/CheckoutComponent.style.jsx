@@ -25,7 +25,7 @@ export const CheckoutTittle = styled.div`
 
 export const CheckoutCart = styled.div`
 flex: 2;
-  width: 66%;
+  width: 80%;
   padding: 20px;
   box-sizing: border-box;
   align-items: center;
@@ -35,7 +35,7 @@ flex: 2;
 
 export const CheckoutPaymethod = styled.div`
  flex: 1;
-  width: 34%;
+  width: 5%;
   padding: 20px;
   box-sizing: border-box;
   background-color:white;
@@ -104,17 +104,20 @@ export const Table = styled.table`
 
 
 export const CheckoutButton = styled.button`
-  width:250px;
-  border-radius: 10px;
-  height:45px;
-  background-color:yellow;
+   
+   padding: 10px;
+  font-size: 1rem;
+  font-size: 0.75rem;
+  cursor: pointer;
+  border: none;
+  border-radius: 50px;
+  background-color: #ffc500;
   color: black;
-  margin: 25px;
-  border:none;
-  
-   &:hover{
-    background-color:#d6d30ec5;
-   }
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: #e3b000;
+  }
   `;
 
 export const redirectButtons = styled.div`
