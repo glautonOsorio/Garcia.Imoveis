@@ -5,6 +5,7 @@ const Get = async () => {
   const data = await response.json();
   return data;
 };
+
 export const ListaDeProdutos = {
   Get,
 };

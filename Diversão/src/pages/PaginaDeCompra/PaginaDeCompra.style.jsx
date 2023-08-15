@@ -1,9 +1,12 @@
-import styled from 'styled-components';
+
+import styled from "styled-components";
 
 export const CarrinhoWrapper = styled.div`
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    background-color: #ccc;
-    padding: 20px;
-`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  width: 100%;
+`;
+

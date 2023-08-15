@@ -2,7 +2,8 @@ header {
   display: flex;
   flex-direction: column;
   background-image: linear-gradient(to top right, #cd853f 10%, #f4a460);
-  height: 150px;
+
+  width: 100%;
   gap: 10px;
   padding: 10px;
   font-family: Arial;
