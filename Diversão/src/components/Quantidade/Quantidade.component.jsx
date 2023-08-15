@@ -1,18 +1,22 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import { CgMathPlus, CgMathMinus } from 'react-icons/cg';
 import * as Styled from './Quantidade.style';
 
-export const QuantidadeComponent = () => {
+export const QuantidadeComponent = ({produto, onUpdate}) => {
 
-    const [qty, setQty] = useState(0);
+    const [qty, setQty] = useState(produto.qty);
 
     const handleAddQty = () => {
-        setQty(qty + 1);
+        const newQty = qty + 1;
+        setQty(newQty);
+        onUpdate(produto.id, newQty);
     }
 
     const handleSubQty = () => {
         if(qty > 0) {
-            setQty(qty - 1);
+            const newQty = qty - 1;
+            setQty(newQty);
+            onUpdate(produto.id, newQty);
         }
     }
 

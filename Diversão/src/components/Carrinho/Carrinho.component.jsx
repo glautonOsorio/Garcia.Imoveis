@@ -2,39 +2,43 @@ import * as Styled from './Carrinho.style';
 import { useEffect, useState } from "react";
 import { Compra } from "../../services/CarrinhoService/CarrinhoService";
 import { QuantidadeComponent } from '../Quantidade/Quantidade.component';
+import mockData from '../../server/db.json'
+import { ResumoComponent } from '../Resumo/Resumo.component';
 
 
 export const CarrinhoComponent = () => {
 
-    const [carrinho, setCarrinho] = useState([]);
+    const [carrinho, setCarrinho] = useState(mockData.carrinho);
 
-    useEffect(() => {
-        const fetchCarrinho = async () => {
-            try {
-                const produtosCarrinho = await Compra.Get();
-                setCarrinho(produtosCarrinho)
-            } catch (error) {
-                console.error('erro ao buscar carrinho: ', error);                
+
+    const handleUpdateQty = (productId, newQty) => {
+        const updatedCarrinho = carrinho.map(item => {
+            if(item.id === productId) {
+                const newPrice = parseFloat(item.preco.replace('R$', '')) * newQty;
+                return{...item, qty: newQty, precoTotal: `R$${newPrice.toFixed(2)}`}
             }
-        }
-        fetchCarrinho();
-    }, [])
+            return item;
+        })
+        setCarrinho(updatedCarrinho)
+    }
 
     return(
         <Styled.ProductsWrapper>
             <h2>Meu Carrinho</h2>
-            {carrinho.length > 0 ? carrinho.map(produto => {
+            {carrinho.length > 0 ? carrinho.map(item => {
                 return(
-                    <Styled.ProductWrapper key={produto.id}>
-                        <img src={produto.imagem} alt='Imagem do Produto' />
+                    <Styled.ProductWrapper key={item.id}>
+                        <img src={item.imagem} alt='Imagem do Produto' />
                         <Styled.ProductFeaturesWrapper>
-                            <h2>{produto.nome}</h2>
-                            <p>{produto.preco}</p>
-                            <QuantidadeComponent/>
+                            <h2>{item.nome}</h2>
+                            <p>{item.preco}</p>
+                            <QuantidadeComponent produto={item} onUpdate={handleUpdateQty}/>
+                            <p>Total: {item.precoTotal}</p>
                         </Styled.ProductFeaturesWrapper>
                     </Styled.ProductWrapper>
                 );
             }) : <p>Nenhum item no seu carrinho</p>}
+            <ResumoComponent carrinho={carrinho}/>
         </Styled.ProductsWrapper>
     );
 }

@@ -14,7 +14,6 @@ export const PaginaDeCompra = () => {
         <Header/>
         <Styled.CarrinhoWrapper>
           <CarrinhoComponent/>
-          <ResumoComponent/>
         </Styled.CarrinhoWrapper>
         <Footer/>
       </MathProvider>
