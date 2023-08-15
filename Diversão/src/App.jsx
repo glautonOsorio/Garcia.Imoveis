@@ -7,6 +7,7 @@ import PaginaDeProdutos from "./pages/PaginaDeProdutos/PaginaDeProdutos";
 import { PaginaDeCompra } from "./pages/PaginaDeCompra/PaginaDeCompra";
 import PaginaDoCarrinho from "./pages/PaginaDoCarrinhoGlauton/PaginaDoCarrinho";
 
+
 function App() {
   return (
     <div className="app">
