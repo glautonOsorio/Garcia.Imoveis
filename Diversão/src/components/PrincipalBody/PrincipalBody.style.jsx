@@ -9,28 +9,45 @@ export const MainContainer = styled.div`
   gap: 5rem;
 `;
 export const MainTitle = styled.h1`
-  font-size: 4rem;
-  color: #dc143c;
+  font-size: 8rem;
+  color: #de8705;
   margin: 1rem;
 `;
 export const MainCard = styled.div`
   display: flex;
   flex-direction: row;
-  background-color: #6495ed;
+  background-color: #00008b;
   margin: 1rem;
+  box-shadow: 0.2rem 0.2rem 0.2rem #485769;
 `;
 export const CardImage = styled.img`
-  width: 25rem;
+  width: 40rem;
 `;
 
 export const MainCardContent = styled.div`
   display: flex;
   flex-direction: column;
   justify-items: center;
-  gap: 3rem;
-  margin: 1rem;
+  gap: 2rem;
   font-size: 2rem;
-  color: #000000;
+  padding: 1rem;
+  color: #fff;
+`;
+
+export const CardButton = styled.button`
+  width: 12rem;
+  height: 4rem;
+  font-size: 1.2rem;
+  color: whitesmoke;
+  background-color: #de8705;
+  color: black;
+  border-color: black;
+  border-radius: 0.5rem;
+  margin-left: 30rem;
+  cursor: pointer;
+  &:hover {
+    background-color: #ffd700;
+  }
 `;
 
 export const MainCardTitle = styled.h2`
@@ -55,10 +72,11 @@ export const MainFooter = styled.div`
   background-color: #ffffff;
   box-shadow: 0.2rem 0.2rem 0.2rem #485769;
   margin-bottom: 4rem;
+  cursor: pointer;
 `;
 export const MainFooterTitle = styled.h3`
   font-size: 4rem;
-  color: #dc143c;
+  color: #de8705;
 `;
 export const MainProductRow = styled.div`
   display: flex;
@@ -70,6 +88,6 @@ export const MainProductRow = styled.div`
 `;
 
 export const ProductImages = styled.img`
-  width: 10rem;
+  width: 8rem;
   margin: 1rem;
 `;

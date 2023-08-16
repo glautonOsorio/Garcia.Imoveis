@@ -7,6 +7,9 @@ import PaginaDeProdutos from "./pages/PaginaDeProdutos/PaginaDeProdutos";
 import Provider from "./contexts/AppProvider";
 import ItensCarrinho from "./components/ItensCarrinho/ItensCarrinho.component";
 
+import { PaginaSquad } from "./pages/PaginaSquad/Index";
+import PaginaDeErro from "./pages/PaginaDeErro/PaginaDeErro";
+import PaginaDoCarrinho from "./pages/PaginaDoCarrinhoGlauton/PaginaDoCarrinho";
 
 function App() {
   return (
@@ -15,10 +18,11 @@ function App() {
         <Provider>
         <Routes>
           <Route path="/" element={<PaginaPrincipal />} />
-          <Route path="/produtos" element={<PaginaDeProdutos />}/>
-          <Route path="/carrinho" />
-          <Route path="/checkout" element={<PaginaDeCheckout/>}/>
-          <Route path="/*" />
+          <Route path="/produtos" element={<PaginaDeProdutos />} />
+          <Route path="/carrinho" element={<PaginaDoCarrinho />} />
+          <Route path="/checkout" element={<PaginaDeCheckout />} />
+          <Route path="/squad" element={<PaginaSquad />} />
+          <Route path="/*" element={<PaginaDeErro />} />
         </Routes>
         <ItensCarrinho/>
         </Provider>
