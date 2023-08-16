@@ -1,3 +1,4 @@
+
 import styled from "styled-components";
 
 export const CarrinhoWrapper = styled.div`
@@ -8,3 +9,4 @@ export const CarrinhoWrapper = styled.div`
   padding: 20px;
   width: 100%;
 `;
+
