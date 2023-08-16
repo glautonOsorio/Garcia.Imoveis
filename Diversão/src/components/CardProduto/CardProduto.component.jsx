@@ -1,8 +1,16 @@
-import React from "react";
-import { StyledCardProduto, AddToCartButton } from "./CardProduto.styled";
-import { Link, useNavigate } from "react-router-dom";
+
+/* eslint-disable react/prop-types */
+import { useContext } from 'react';
+import { StyledCardProduto, AddToCartButton } from "./CardProduto.styled"; 
+import AppContext from "../../contexts/AppContext";
+
 
 const CardProduto = ({ item }) => {
+
+  const {setCartItems} = useContext(AppContext);
+
+import { Link, useNavigate } from "react-router-dom";
+
   // Função para adicionar o item ao carrinho
   const navigate = useNavigate();
   const adicionarAoCarrinho = () => {
@@ -26,7 +34,9 @@ const CardProduto = ({ item }) => {
       .then((response) => response.json())
       .then((data) => {
         console.log("Item adicionado ao carrinho:", data);
-        // Atualizar o estado do carrinho automaticamente aqui
+        setCartItems(data)
+        // Atualizar o estado do carrinho automaticamente aqui 
+
         //** talvez vamos ter que criar um context ou deixar a função no app.jsx que encapsula tudo
       })
       .catch((error) => {
@@ -39,23 +49,20 @@ const CardProduto = ({ item }) => {
     <StyledCardProduto>
       <div className="corner-badge">#{item.id}</div>
       <div className="container">
-        {/* Exibição do nome */}
-        <p className="title">{item.nome}</p>
-        {/* Exibição da imagem */}
-        <div className="image-container">
-          <img src={item.imagem} alt={item.nome} loading="lazy" />
-        </div>
-        {/* Exibição do preço */}
-        <div className="price-and-button">
-          <span className="price">
-            <p className="price-tittle">preço:</p>
-            {item.moeda}
-            {item.preço}
-          </span>
-          <AddToCartButton className="bt" onClick={adicionarAoCarrinho}>
-            Adicionar ao Carrinho
-          </AddToCartButton>
-        </div>
+      {/* Exibição do nome */}
+      <span className="title">{item.nome}</span>
+      {/* Exibição da imagem */}
+      <div className="image-container">
+        <img src={item.imagem} alt={item.nome} loading="lazy" />
+      </div>
+      {/* Exibição do preço */}
+      <div className="price-and-button">
+        <span className="price"><span className="price-tittle">preço:</span>{item.preço}</span>
+        <AddToCartButton className="bt" onClick={adicionarAoCarrinho}>
+          Adicionar ao Carrinho
+        </AddToCartButton>
+      </div>
+
       </div>
     </StyledCardProduto>
   );
