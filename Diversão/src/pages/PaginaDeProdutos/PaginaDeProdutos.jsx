@@ -47,7 +47,7 @@ const PaginaDeProdutos = () => {
 
   return (
     <>
-      <Header /> {/* Componente de cabeçalho */}
+      <Header />
       <StyledContent>
         <BuscaProduto searchTerm={searchTerm} onSearchChange={handleSearch} /> {/* Componente de busca */}
       </StyledContent>
@@ -68,7 +68,7 @@ const PaginaDeProdutos = () => {
           <div>Nenhum produto encontrado com este nome</div>
         )}
       </StyledProduto>
-      <Footer /> {/* Componente de rodapé */}
+      <Footer /> 
     </>
   );
 };

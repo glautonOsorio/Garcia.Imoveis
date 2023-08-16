@@ -6,8 +6,8 @@ export const FooterContainer = styled.footer`
   flex-direction: column;
   font-family: "Times New Roman";
   width: 100%;
-  background-image: linear-gradient(to top, #232f3e 80%, #131a22);
-  color: #f8f8ff;
+  background-color: #00121c;
+  color: #fff;
   gap: 1rem;
 `;
 
@@ -16,6 +16,11 @@ export const FooterRow = styled.section`
   flex-direction: row;
   margin: 1rem;
   justify-content: space-between;
+`;
+
+export const FooterImage = styled.img`
+  width: 18rem;
+  margin: 1rem;
 `;
 
 export const FooterTittle = styled.h4`
