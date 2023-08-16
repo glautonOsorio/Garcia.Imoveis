@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { Compra } from "../../services/CarrinhoService/CarrinhoService";
 import * as Styled from "./CheckoutComponent.style";
+import { cp } from "fs";
 
 const Button = ({ to, children }) => {
   const navigate = useNavigate();
@@ -50,16 +51,25 @@ export const CheckoutComponent = () => {
     Soma();
   }, []);
 
+  const DeleteData = async () => {
+    await Compra.Get().then((produto) => {
+      produto.forEach(async (item) => {
+        await Compra.Delete(item.id);
+      });
+    });
+  };
+
   const [paymentMethod, setPaymentMethod] = useState("creditCard");
 
   const [isCheckoutDisabled, setIsCheckoutDisabled] = useState(true);
   const [selectedPaymentMethod, setSelectedPaymentMethod] = useState("");
-  const handlePayment = () => {
+  const handlePayment = async () => {
+    DeleteData();
     alert(
       `Compra bem sucedida no ${paymentMethod} no valor total de ${somaPreços}! Obrigado por comprar conosco.`
     );
 
-    navigate("/");
+    await navigate("/");
   };
 
   useEffect(() => {
