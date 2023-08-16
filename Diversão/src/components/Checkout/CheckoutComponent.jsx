@@ -50,16 +50,25 @@ export const CheckoutComponent = () => {
     Soma();
   }, []);
 
+  const DeleteData = async () => {
+    await Compra.Get().then((produto) => {
+      produto.forEach(async (item) => {
+        await Compra.Delete(item.id);
+      });
+    });
+  };
+
   const [paymentMethod, setPaymentMethod] = useState("creditCard");
 
   const [isCheckoutDisabled, setIsCheckoutDisabled] = useState(true);
   const [selectedPaymentMethod, setSelectedPaymentMethod] = useState("");
-  const handlePayment = () => {
+  const handlePayment = async () => {
+    DeleteData();
     alert(
       `Compra bem sucedida no ${paymentMethod} no valor total de ${somaPreços}! Obrigado por comprar conosco.`
     );
 
-    navigate("/");
+    await navigate("/");
   };
 
   useEffect(() => {

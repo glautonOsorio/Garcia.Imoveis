@@ -19,3 +19,4 @@ export const ProductFeaturesWrapper = styled.div`
   align-items: center;
   justify-content: center;
 `;
+

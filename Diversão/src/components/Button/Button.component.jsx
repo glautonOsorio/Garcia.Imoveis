@@ -17,3 +17,4 @@ export const ButtonComponent = ({ type, text, onClick }) => {
     </Styled.ButtonWrapper>
   );
 };
+

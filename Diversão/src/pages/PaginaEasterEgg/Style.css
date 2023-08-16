@@ -1,0 +1,28 @@
+.cardEaster{
+display: flex;
+}
+
+#teamCard{
+    display: block;
+    max-width: 280px;
+}
+
+#aboutUs {
+    display: block;
+    background-color: black;
+    height: 500px;
+    padding: 50px;
+    color: white;
+}
+
+@media (max-width: 600px)
+{
+  .cardEaster
+   {
+    display: block;
+    
+   }
+   #aboutUs {
+    margin-top: -50px;
+}
+}

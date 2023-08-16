@@ -1,3 +1,4 @@
+
 import styled from "styled-components";
 
 export const ResumoWrapper = styled.div`
@@ -6,3 +7,4 @@ export const ResumoWrapper = styled.div`
   background-color: blue;
   padding: 50px;
 `;
+

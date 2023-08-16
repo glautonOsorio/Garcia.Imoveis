@@ -9,6 +9,7 @@ export const HeaderWrapper = styled.nav`
     padding: 20px;
     background-color: #00121c;
     gap: 10px;
+    z-index: 1;
 `;
 
 export const LogoWrapper = styled.div`
@@ -20,7 +21,7 @@ export const LogoWrapper = styled.div`
 
 export const MenuWrapper = styled.ul`
     display: flex;
-    align-items: center;
+    align-items: end;
     gap: 40px;
     padding: 10px;
     list-style-type: none;
@@ -31,8 +32,13 @@ export const MenuWrapper = styled.ul`
     }
 
     div {
+      display:flex;
+      justify-content: space-between;
+      align-items: center;
       text-align: right;
       margin-right: 10px;
+      padding: 2px;
+
     span {
       font-size: 16px;
       color: #c6c6c6;
@@ -40,8 +46,7 @@ export const MenuWrapper = styled.ul`
     strong {
       font-size: 14px;
       display: block;
-      color: #fff;
-      padding:4px;
+      color: #fff;     
     }
   }
 
