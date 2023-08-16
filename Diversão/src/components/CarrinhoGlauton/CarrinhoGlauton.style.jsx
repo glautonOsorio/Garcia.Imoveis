@@ -25,7 +25,7 @@ export const CarrinhoTitulo = styled.h1`
 export const ProductOverflow = styled.div`
   margin: 1rem;
   overflow-y: scroll;
-  height: 28rem;
+  height: 60%;
 `;
 
 export const CarrinhoProductImage = styled.img`
