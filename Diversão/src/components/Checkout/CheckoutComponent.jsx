@@ -54,12 +54,10 @@ export const CheckoutComponent = () => {
 
   const [isCheckoutDisabled, setIsCheckoutDisabled] = useState(true);
   const [selectedPaymentMethod, setSelectedPaymentMethod] = useState("");
-  const handlePayment = () => {
-    alert(
-      `Compra bem sucedida no ${paymentMethod} no valor total de ${somaPreços}! Obrigado por comprar conosco.`
-    );
+  const handlePayment = async (id) => {
+    await Compra.Delete(id);
 
-    navigate("/");
+    await navigate("/");
   };
 
   useEffect(() => {
@@ -166,7 +164,11 @@ export const CheckoutComponent = () => {
           </div>
         </Styled.PaymentOptions>
         <Styled.CheckoutButton
-          onClick={handlePayment}
+          onClick={() => {
+            produtos.map((produto) => {
+              handlePayment(produto.id);
+            });
+          }}
           disabled={isCheckoutDisabled}
         >
           Finalizar Compra

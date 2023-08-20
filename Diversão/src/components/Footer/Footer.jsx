@@ -30,8 +30,11 @@ const Footer = () => {
               Pagina do Carrinho
             </Styled.FooterLnk>
 
-            <Styled.FooterLnk to={"/chekout"}>
+            <Styled.FooterLnk to={"/checkout"}>
               Pagina de Checkout
+            </Styled.FooterLnk>
+            <Styled.FooterLnk to={"/squad"}>
+              Pagina do Grupo Secreto de Progamadores
             </Styled.FooterLnk>
           </Styled.FooterList>
         </Styled.FooterRow>

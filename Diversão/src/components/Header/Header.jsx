@@ -1,12 +1,16 @@
+import { useContext } from 'react';
 import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 import { HeaderWrapper, LogoWrapper, MenuWrapper } from './Header.styled';
 import logo from '../../assets/logo-garcia.png';
-import React, { useEffect, useState } from "react";
+import  { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { Compra } from "../../services/CarrinhoService/CarrinhoService";
+import AppContext from "../../contexts/AppContext";
 
 
 const Header = () => {
+  const {cartItems, setIsCartVisible} = useContext(AppContext);
+
   const [compra, setCompra] = useState();
   const navigate = useNavigate();
   useEffect(() => {
@@ -16,14 +20,11 @@ const Header = () => {
       });
     };
     quantidadeCompra();
-  }, []);
+  }, [cartItems]);
   const navigateHome = () => {
     navigate("/");
   };
   return (
-    <React.Fragment>
-
-
       <HeaderWrapper>
         <LogoWrapper>
           <Link to={'/'}>
@@ -31,17 +32,25 @@ const Header = () => {
           </Link>
         </LogoWrapper>
         <MenuWrapper>
+        <li>
+            <Link to={'/'}>Inicio</Link>
+          </li>
           <li>
             <Link to={'/produtos'}>Produtos</Link>
           </li>
           <li>
             <Link to={"/carrinho"} className="link">
-              <div>
+              <div >
                 <strong>Meu carrinho</strong>
+                </div><div onMouseOver={() => setIsCartVisible(true)} onMouseOut={() => setIsCartVisible(false)}>
                 <span>
-                  {{ compra } === 1 ? `${compra} item` : `${compra} itens`}
+                {compra === 1 
+                ? `${compra} item`
+                : compra > 1
+                ? `${compra} itens`
+                : 'vazio'}
                 </span> {/* Exibe a quantidade */}
-                <AddShoppingCartIcon fontSize="medium" />
+                <AddShoppingCartIcon fontSize="medium"/>
               </div>
 
             </Link>
@@ -50,7 +59,6 @@ const Header = () => {
         </MenuWrapper>
       </HeaderWrapper>
 
-    </React.Fragment>
   );
 };
 

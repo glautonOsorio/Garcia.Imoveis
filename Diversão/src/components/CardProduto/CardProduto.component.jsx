@@ -1,10 +1,12 @@
-import React from "react";
+/* eslint-disable react/prop-types */
+import { useContext } from "react";
 import { StyledCardProduto, AddToCartButton } from "./CardProduto.styled";
-import { Link, useNavigate } from "react-router-dom";
+import AppContext from "../../contexts/AppContext";
 
 const CardProduto = ({ item }) => {
-  // Função para adicionar o item ao carrinho
-  const navigate = useNavigate();
+  const { setCartItems } = useContext(AppContext);
+
+  // Função para adicionar o item ao
   const adicionarAoCarrinho = () => {
     // Construindo o objeto do novo item do carrinho
     const novoItemCarrinho = {
@@ -26,13 +28,14 @@ const CardProduto = ({ item }) => {
       .then((response) => response.json())
       .then((data) => {
         console.log("Item adicionado ao carrinho:", data);
+        setCartItems(data);
         // Atualizar o estado do carrinho automaticamente aqui
+
         //** talvez vamos ter que criar um context ou deixar a função no app.jsx que encapsula tudo
       })
       .catch((error) => {
         console.error("Erro ao adicionar item ao carrinho:", error);
       });
-    navigate("/carrinho");
   };
 
   return (
@@ -40,7 +43,7 @@ const CardProduto = ({ item }) => {
       <div className="corner-badge">#{item.id}</div>
       <div className="container">
         {/* Exibição do nome */}
-        <p className="title">{item.nome}</p>
+        <span className="title">{item.nome}</span>
         {/* Exibição da imagem */}
         <div className="image-container">
           <img src={item.imagem} alt={item.nome} loading="lazy" />
@@ -48,7 +51,7 @@ const CardProduto = ({ item }) => {
         {/* Exibição do preço */}
         <div className="price-and-button">
           <span className="price">
-            <p className="price-tittle">preço:</p>
+            <span className="price-tittle">preço:</span>
             {item.moeda}
             {item.preço}
           </span>

@@ -21,7 +21,7 @@ export const MainCard = styled.div`
   box-shadow: 0.2rem 0.2rem 0.2rem #485769;
 `;
 export const CardImage = styled.img`
-  width: 25rem;
+  width: 40rem;
 `;
 
 export const MainCardContent = styled.div`
@@ -29,8 +29,8 @@ export const MainCardContent = styled.div`
   flex-direction: column;
   justify-items: center;
   gap: 2rem;
-  margin: 1rem;
   font-size: 2rem;
+  padding: 1rem;
   color: #fff;
 `;
 
