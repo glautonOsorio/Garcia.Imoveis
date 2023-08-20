@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { Compra } from "../../services/CarrinhoService/CarrinhoService";
 import * as Styled from "./CheckoutComponent.style";
+import React from "react";
 
 const Button = ({ to, children }) => {
   const navigate = useNavigate();

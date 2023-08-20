@@ -1,7 +1,9 @@
 /* eslint-disable react/prop-types */
 
-import { StyledBuscaProduto } from "./BuscaProduto.styled"; 
-import SearchIcon from '@mui/icons-material/Search'; // Importe o ícone de pesquisa do Material-UI
+import { StyledBuscaProduto } from "./BuscaProduto.styled";
+import React from "react";
+
+import SearchIcon from "@mui/icons-material/Search"; // Importe o ícone de pesquisa do Material-UI
 
 const BuscaProduto = ({ searchTerm, onSearchChange }) => {
   return (

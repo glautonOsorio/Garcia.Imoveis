@@ -1,11 +1,11 @@
-
 import { useState, useEffect } from "react";
 import CardProduto from "../../components/CardProduto/CardProduto.component";
 import { StyledContent, StyledProduto } from "./PaginaDeProduto.styled";
 import BuscaProduto from "../../components/BuscaProduto/BuscaProduto.component";
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
-import { ListaDeProdutos } from "../../services/ProdutosService/Produtos"; 
+import { ListaDeProdutos } from "../../services/ProdutosService/Produtos";
+import React from "react";
 
 const PaginaDeProdutos = () => {
   // Estado para armazenar a lista completa de produtos
@@ -43,13 +43,13 @@ const PaginaDeProdutos = () => {
 
     setFilteredItems(filtered);
   };
-  
 
   return (
     <>
       <Header />
       <StyledContent>
-        <BuscaProduto searchTerm={searchTerm} onSearchChange={handleSearch} /> {/* Componente de busca */}
+        <BuscaProduto searchTerm={searchTerm} onSearchChange={handleSearch} />{" "}
+        {/* Componente de busca */}
       </StyledContent>
       <StyledProduto>
         {/* Verifica se existem produtos filtrados para exibir */}
@@ -68,7 +68,7 @@ const PaginaDeProdutos = () => {
           <div>Nenhum produto encontrado com este nome</div>
         )}
       </StyledProduto>
-      <Footer /> 
+      <Footer />
     </>
   );
 };

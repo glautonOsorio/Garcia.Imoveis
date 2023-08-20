@@ -64,6 +64,38 @@
       "imagem": "https://images-americanas.b2w.io/produtos/5491685218/imagens/cadeira-infantil-eames-junior-rosa-rosa/5491685218_1_xlarge.jpg"
     }
   ],
-
-  "carrinho": []
+  "carrinho": [
+    {
+      "produto_id": 3,
+      "nome": "Cadeira de Criança colorida tres",
+      "moeda": "R$",
+      "preço": "45.00",
+      "imagem": "https://images-americanas.b2w.io/produtos/5698332031/imagens/cadeira-banco-plastica-brinquedo-infantil-colorida-escola-un/5698332049_1_xlarge.jpg",
+      "id": 1
+    },
+    {
+      "produto_id": 2,
+      "nome": "Cadeira de Criança colorida dois",
+      "moeda": "R$",
+      "preço": "20.00",
+      "imagem": "https://images-americanas.b2w.io/produtos/5307592160/imagens/cadeira-de-plastico-infantil-decorada-azul/5307592178_1_xlarge.jpg",
+      "id": 2
+    },
+    {
+      "produto_id": 1,
+      "nome": "Cadeira de Criança colorida um",
+      "moeda": "R$",
+      "preço": "30.00",
+      "imagem": "https://images-americanas.b2w.io/produtos/01/00/img/3653861/0/3653861027_1GG.jpg",
+      "id": 3
+    },
+    {
+      "produto_id": 3,
+      "nome": "Cadeira de Criança colorida tres",
+      "moeda": "R$",
+      "preço": "45.00",
+      "imagem": "https://images-americanas.b2w.io/produtos/5698332031/imagens/cadeira-banco-plastica-brinquedo-infantil-colorida-escola-un/5698332049_1_xlarge.jpg",
+      "id": 4
+    }
+  ]
 }

@@ -1,11 +1,11 @@
-import { ErrorComponent } from '../../components/error/Index'
-import './Style.css'
+import { ErrorComponent } from "../../components/Error/Index";
+import "./Style.css";
+import React from "react";
 
-
-export const Error404 = ()=>{
-    return (
-        <>
-        <ErrorComponent/>        
-        </>
-    )
-}
+export const Error404 = () => {
+  return (
+    <>
+      <ErrorComponent />
+    </>
+  );
+};

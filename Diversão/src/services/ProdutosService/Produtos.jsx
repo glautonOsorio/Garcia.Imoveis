@@ -1,3 +1,4 @@
+import fetch from "cross-fetch";
 const API_URL = `http://localhost:3000/produtos`;
 
 const Get = async () => {

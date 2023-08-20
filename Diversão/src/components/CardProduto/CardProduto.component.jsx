@@ -1,4 +1,6 @@
 /* eslint-disable react/prop-types */
+import React from "react";
+
 import { useContext } from "react";
 import { StyledCardProduto, AddToCartButton } from "./CardProduto.styled";
 import AppContext from "../../contexts/AppContext";

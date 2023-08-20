@@ -1,10 +1,10 @@
+import React from "react";
 import { useEffect, useState } from "react";
 import { ListaDeProdutos } from "../../services/ProdutosService/Produtos";
-import ImagemPrincipal from "../../assets/ExemploPaiFilho.jpg";
 import * as Styled from "./PrincipalBody.style";
 import { useNavigate } from "react-router";
 
-const PrincipalBody = () => {
+function PrincipalBody() {
   const [produtos, setProdutos] = useState([]);
 
   const navigate = useNavigate();
@@ -25,7 +25,10 @@ const PrincipalBody = () => {
       <Styled.MainTitle>Feliz Dias dos Pais</Styled.MainTitle>
       <Styled.MainCard>
         <div>
-          <Styled.CardImage src={ImagemPrincipal} alt="Pai e Filho" />
+          <Styled.CardImage
+            src="../../assets/ExemploPaiFilho.jpg"
+            alt="Pai e Filho"
+          />
         </div>
         <Styled.MainCardContent>
           <Styled.MainCardTitle>
@@ -69,6 +72,6 @@ const PrincipalBody = () => {
       </Styled.MainFooter>
     </Styled.MainContainer>
   );
-};
+}
 
 export default PrincipalBody;

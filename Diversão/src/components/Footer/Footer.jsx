@@ -1,5 +1,7 @@
 import React from "react";
 import logo from "../../assets/logo-garcia.png";
+import React from "react";
+
 import * as Styled from "./Footer.style";
 import { Link, useNavigate } from "react-router-dom";
 

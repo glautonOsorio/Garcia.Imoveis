@@ -1,4 +1,6 @@
 import { useNavigate } from "react-router-dom";
+import React from "react";
+
 import { Compra } from "../../services/CarrinhoService/CarrinhoService";
 import * as Styled from "./CarrinhoGlauton.style";
 import { useEffect, useState } from "react";
