@@ -3,13 +3,10 @@ import { useContext } from "react";
 import { StyledCardProduto, AddToCartButton } from "./CardProduto.styled";
 import AppContext from "../../contexts/AppContext";
 
-import { Link, useNavigate } from "react-router-dom";
-
 const CardProduto = ({ item }) => {
   const { setCartItems } = useContext(AppContext);
 
-  // Função para adicionar o item ao carrinho
-  const navigate = useNavigate();
+  // Função para adicionar o item ao
   const adicionarAoCarrinho = () => {
     // Construindo o objeto do novo item do carrinho
     const novoItemCarrinho = {
@@ -39,7 +36,6 @@ const CardProduto = ({ item }) => {
       .catch((error) => {
         console.error("Erro ao adicionar item ao carrinho:", error);
       });
-    navigate("/carrinho");
   };
 
   return (
@@ -56,6 +52,7 @@ const CardProduto = ({ item }) => {
         <div className="price-and-button">
           <span className="price">
             <span className="price-tittle">preço:</span>
+            {item.moeda}
             {item.preço}
           </span>
           <AddToCartButton className="bt" onClick={adicionarAoCarrinho}>

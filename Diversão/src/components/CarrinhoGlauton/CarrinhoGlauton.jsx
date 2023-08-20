@@ -2,6 +2,7 @@ import { useNavigate } from "react-router-dom";
 import { Compra } from "../../services/CarrinhoService/CarrinhoService";
 import * as Styled from "./CarrinhoGlauton.style";
 import { useEffect, useState } from "react";
+import DeleteProduct from "../DeleteProduct/DeleteProduct";
 
 const Carrinho = () => {
   const [somaPreços, setSomaPreços] = useState();
@@ -49,6 +50,8 @@ const Carrinho = () => {
             produtos.map((produto) => {
               return (
                 <Styled.CarrinhoProductContent key={produto.id}>
+                  <DeleteProduct produtoId={produto.id} />
+
                   <Styled.CarrinhoProductImage
                     src={produto.imagem}
                     alt="imagem do item"

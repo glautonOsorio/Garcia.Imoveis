@@ -29,18 +29,12 @@ const Create = async (newData) => {
 };
 
 const Delete = async (id) => {
-  await fetch(`${API_URL}/${id}`, {
+  await fetch(`http://localhost:3000/carrinho/${id}`, {
     method: "Delete",
     headers: {
       "Content-type": "application/json",
     },
-  })
-    .then((res) => {
-      alert("Produto deletado com sucesso");
-    })
-    .catch((err) => {
-      alert(`Erro ao deletar ${err.message}`);
-    });
+  });
 };
 export const Compra = {
   Get,

@@ -50,23 +50,12 @@ export const CheckoutComponent = () => {
     Soma();
   }, []);
 
-  const DeleteData = async () => {
-    await Compra.Get().then((produto) => {
-      produto.forEach(async (item) => {
-        await Compra.Delete(item.id);
-      });
-    });
-  };
-
   const [paymentMethod, setPaymentMethod] = useState("creditCard");
 
   const [isCheckoutDisabled, setIsCheckoutDisabled] = useState(true);
   const [selectedPaymentMethod, setSelectedPaymentMethod] = useState("");
-  const handlePayment = async () => {
-    DeleteData();
-    alert(
-      `Compra bem sucedida no ${paymentMethod} no valor total de ${somaPreços}! Obrigado por comprar conosco.`
-    );
+  const handlePayment = async (id) => {
+    await Compra.Delete(id);
 
     await navigate("/");
   };
@@ -175,7 +164,11 @@ export const CheckoutComponent = () => {
           </div>
         </Styled.PaymentOptions>
         <Styled.CheckoutButton
-          onClick={handlePayment}
+          onClick={() => {
+            produtos.map((produto) => {
+              handlePayment(produto.id);
+            });
+          }}
           disabled={isCheckoutDisabled}
         >
           Finalizar Compra
